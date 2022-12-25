@@ -24,13 +24,14 @@ body {
 }
 
 .abstract-img {
-  margin-block-start: 2.5rem;
+  margin-block: 2.5rem;
   margin-inline: auto;
   width: clamp(16.25rem, 16rem + 4.1vw, 18.75rem);
   height: 3.75rem;
   border-radius: 5px;
   background-color: var(--color-main-black);
   overflow: hidden;
+  display: block;
 }
 
 .section-title {
@@ -166,9 +167,101 @@ html {
 }
 
 /* Works Card Shapes */
+.card-text {
+  font-family: var(--font-header);
+  font-size: 1.25rem;
+  text-align: center;
+  position: relative;
+  top: 88%;
+}
 
 .works-card {
-  background-color: #9ea1d4;
+  --color-red: hsl(351, 80%, 60%);
+  --color-dark-blue: hsl(231, 41%, 29%);
+  --color-light-yellow: hsl(65, 80%, 84%);
+  --color-light-aqua: hsl(180, 31%, 74%);
+  background-color: hsl(237, 39%, 73%);
+  position: relative;
+  overflow: hidden;
+}
+
+.works-card > .shape {
+  position: absolute;
+  transition: left, top;
+  transition-duration: 250ms;
+  transition-timing-function: ease-in-out;
+}
+
+.works-card > .shape:nth-child(1) {
+  background-color: var(--color-red);
+  width: 32.5%;
+  height: 15%;
+  top: 6%;
+  left: 0;
+  z-index: 1;
+}
+.works-card > .shape:nth-child(2) {
+  border: 2px solid var(--color-dark-blue);
+  width: 28%;
+  height: 18.6%;
+  border-radius: 50%;
+  top: 11%;
+  left: 11.5%;
+  z-index: 0;
+}
+.works-card > .shape:nth-child(3) {
+  background-color: var(--color-dark-blue);
+  width: 5%;
+  height: 3.33%;
+  top: 12%;
+  left: 87%;
+}
+.works-card > .shape:nth-child(4) {
+  background-color: var(--color-red);
+  width: 10%;
+  height: 6.7%;
+  top: 48%;
+  left: 22.5%;
+}
+.works-card > .shape:nth-child(5) {
+  border: 2px solid var(--color-light-aqua);
+  width: 29%;
+  height: 5%;
+  top: 39%;
+  left: 66%;
+  z-index: 1;
+}
+.works-card > .shape:nth-child(6) {
+  background-color: var(--color-dark-blue);
+  width: 28%;
+  height: 18.7%;
+  border-radius: 50%;
+  top: 36%;
+  left: 82%;
+  z-index: 0;
+}
+.works-card > .shape:nth-child(7) {
+  background-color: var(--color-dark-blue);
+  width: 13%;
+  height: 8.7%;
+  border-radius: 50%;
+  top: 78.3%;
+  left: -1.5%;
+  z-index: 1;
+}
+.works-card > .shape:nth-child(8) {
+  background-color: var(--color-light-aqua);
+  width: 32.5%;
+  height: 5.7%;
+  top: 77%;
+  left: -7%;
+}
+.works-card > .shape:nth-child(9) {
+  background-color: var(--color-light-yellow);
+  width: 32.5%;
+  height: 9.3%;
+  top: 71.3%;
+  left: 67.5%;
 }
 
 /* Skills Card Shapes */
@@ -182,6 +275,8 @@ html {
 .about-me-card {
   background-color: #01adb5;
 }
+
+/* Hover State Card */
 
 @media (hover: hover) {
   .works-card {
@@ -228,4 +323,8 @@ html {
 
 #about-me {
   padding-block: 6.25rem;
+}
+
+.about-me-img {
+  background-color: #01adb5;
 }
