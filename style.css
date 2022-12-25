@@ -1,0 +1,231 @@
+/* Global */
+
+:root {
+  --font-header: 'Playfair Display', serif;
+  --font-text: 'Josefin Sans', sans-serif;
+  --font-signature: 'Monsieur La Doulaise', cursive;
+  --fw-semibold: 600;
+  --fw-light: 300;
+
+  --color-main-black: hsl(0, 0%, 8%);
+  --color-background: hsl(0, 0%, 97%);
+  --color-main-white: hsl(0, 0%, 100%);
+}
+
+a {
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-text);
+  color: var(--color-main-black);
+}
+
+.abstract-img {
+  margin-block-start: 2.5rem;
+  margin-inline: auto;
+  width: clamp(16.25rem, 16rem + 4.1vw, 18.75rem);
+  height: 3.75rem;
+  border-radius: 5px;
+  background-color: var(--color-main-black);
+  overflow: hidden;
+}
+
+.section-title {
+  text-align: center;
+  font-family: var(--font-header);
+  font-weight: var(--fw-semibold);
+  font-size: 2.5rem;
+}
+
+.btn {
+  border-radius: 5px;
+  border: none;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  font-family: var(--font-text);
+  font-weight: var(--fw-semibold);
+  cursor: pointer;
+}
+
+/* Reset */
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+/* Navbar Style */
+
+.navbar {
+  width: calc(100% - 5rem);
+  max-width: 80rem;
+  margin-inline: auto;
+  display: flex;
+  margin-block: 1.875rem;
+  align-items: center;
+}
+
+.logo {
+  font-family: var(--font-header);
+  font-weight: var(--fw-semibold);
+  font-size: 1.5rem;
+  color: var(--color-main-black);
+  margin-inline-end: auto;
+  cursor: pointer;
+}
+
+.social-links {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  gap: 1.25rem;
+}
+
+.fa-github,
+.fa-linkedin {
+  height: 1.625rem;
+}
+
+/* Welcome section */
+
+.welcome {
+  margin-block-end: 18.75rem;
+  display: flex;
+  width: calc(100% - 5rem);
+  max-width: 80rem;
+  margin-inline: auto;
+  margin-block-start: 9.375rem;
+  align-items: flex-end;
+}
+
+/* Greeting */
+
+.greeting {
+  max-width: 26.875rem;
+  margin-inline-end: auto;
+}
+
+.greeting > h1 {
+  font-family: var(--font-signature);
+  font-weight: 400;
+  font-size: 5rem;
+  margin-block-end: 0.625rem;
+}
+
+.greeting > p {
+  font-size: 1.25rem;
+  margin-block-end: 2.5rem;
+  line-height: 1.5;
+}
+
+.contact-me-btn {
+  height: 3.75rem;
+  width: 9.375rem;
+  font-size: 1.125rem;
+  margin-inline-end: 1rem;
+  background-color: hsl(60, 44%, 89%);
+}
+
+.resume-btn {
+  height: 3.75rem;
+  width: 6.25rem;
+  font-size: 1.125rem;
+  background-color: hsl(0, 14%, 33%);
+  color: var(--color-main-white);
+}
+
+.resume > a {
+  color: var(--color-main-white);
+}
+
+/* Navigation Cards */
+
+.nav-card-container {
+  display: flex;
+  gap: 0.9375rem;
+}
+
+.nav-card {
+  width: 5.625rem;
+  width: clamp(5.625rem, 4rem + 11.45vw, 12.5rem);
+  height: 300px;
+  border-radius: 5px;
+}
+
+/* Works Card Shapes */
+
+.works-card {
+  background-color: #9ea1d4;
+}
+
+/* Skills Card Shapes */
+
+.skills-card {
+  background-color: #fd8a8a;
+}
+
+/* About Me Card Shapes */
+
+.about-me-card {
+  background-color: #01adb5;
+}
+
+@media (hover: hover) {
+  .works-card {
+  }
+
+  .skills-card {
+  }
+
+  .about-me-card {
+  }
+}
+
+/* Works Section */
+
+#works {
+  background-color: var(--color-background);
+  padding-block: 6.25rem;
+}
+
+.works-img {
+  margin-block-end: 2.5rem;
+}
+
+.project-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.project {
+  height: 31.25rem;
+  width: 43.75rem;
+  background-color: hsl(60, 44%, 89%);
+}
+
+/* Skills Section */
+
+#skills {
+  padding-block: 6.25rem;
+}
+
+/* About Me Section */
+
+#about-me {
+  padding-block: 6.25rem;
+}
