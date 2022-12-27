@@ -112,22 +112,31 @@ html {
   align-items: flex-end;
 }
 
+@media (max-width: 68.25rem) {
+  .welcome {
+    flex-wrap: wrap;
+  }
+  .nav-card-container {
+    margin-block-start: 2.5rem;
+  }
+}
+
 /* Greeting */
 
 .greeting {
-  max-width: 26.875rem;
   margin-inline-end: auto;
 }
-
-.greeting > h1 {
+.greeting-text {
+  max-width: 26.875rem;
+}
+.greeting-text > h1 {
   font-family: var(--font-signature);
   font-weight: 400;
-  font-size: 5rem;
+  font-size: clamp(3.125rem, 2.5rem + 3.125vw, 5rem);
   margin-block-end: 0.625rem;
 }
-
-.greeting > p {
-  font-size: 1.25rem;
+.greeting-text > p {
+  font-size: clamp(1rem, 0.92rem + 0.42vw, 1.25rem);
   margin-block-end: 2.5rem;
   line-height: 1.5;
 }
@@ -154,32 +163,52 @@ html {
 
 /* Navigation Cards */
 
+.left-nav {
+  position: fixed;
+  transform: rotate(-90deg);
+  top: 50%;
+  left: 10px;
+  font-family: var(--font-header);
+}
+
+.left-nav > a {
+  color: var(--color-black);
+}
+
 .nav-card-container {
   display: flex;
   gap: 0.9375rem;
 }
 
 .nav-card {
-  width: 5.625rem;
-  width: clamp(5.625rem, 4rem + 11.45vw, 12.5rem);
-  height: 300px;
+  width: clamp(5.625rem, 3.33rem + 11.45vw, 12.5rem);
+  height: clamp(8.4375rem, 5rem + 17.1875vw, 18.75rem);
   border-radius: 5px;
 }
 
-/* Works Card Shapes */
 .card-text {
   font-family: var(--font-header);
-  font-size: 1.25rem;
-  text-align: center;
-  position: relative;
-  top: 88%;
+  font-size: clamp(1rem, 0.92rem + 0.42vw, 1.25rem);
+  color: var(--color-black);
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform ease-in-out 250ms;
 }
 
+.nav-card:hover > .card-text {
+  transform: translate(-50%, -80%);
+  text-decoration: underline;
+}
+
+/* Works Card Shapes */
 .works-card,
 .skills-card,
 .about-me-card {
   position: relative;
   overflow: hidden;
+  cursor: pointer;
   --color-black-light: hsl(217, 10%, 25%);
   --color-black-med: hsl(216, 18%, 17%);
   --color-black: hsl(0, 0%, 8%);
@@ -195,7 +224,7 @@ html {
 .skills-card .shape,
 .about-me-card .shape {
   position: absolute;
-  transition: left, top;
+  transition: left, top, transform;
   transition-duration: 250ms;
   transition-timing-function: ease-in-out;
 }
@@ -280,8 +309,8 @@ html {
 .skills-card {
   background-color: #fd8a8a;
 }
-
-.skills-card > .shape {
+/* Eyes style */
+.skills-card > .eye {
   width: 50%;
   height: 33.3%;
   top: 50%;
@@ -290,63 +319,106 @@ html {
   border-radius: 100% 0;
   border: 1px solid var(--color-black);
   background-color: #fff;
-  overflow: hidden;
+  overflow: clip;
+  transition: box-shadow 1000ms ease-in-out;
 }
-.skills-card > .shape > .shape {
-  width: 50%;
-  height: 50%;
+.skills-card:hover > .eye {
+  box-shadow: rgba(17, 12, 46, 0.5) 0px 48px 100px 0px;
+}
+.skills-card > .eye > .eye-lid {
+  background-color: var(--color-black);
+  position: absolute;
+  width: 150%;
+  height: 150%;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) rotate(45deg);
+  transform: translate(-50%, -50%) rotate(-45deg);
+  transition: transform 250ms ease-in-out;
+}
+.skills-card:hover > .eye > .eye-lid {
+  transform: translate(-100%, -100%) rotate(-45deg);
+}
+.skills-card > .eye > .eye-ball {
+  width: 40%;
+  height: 40%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   border-radius: 50%;
   background-color: var(--color-black);
 }
-
 .skills-card > .particle-shape > .shape {
   background-color: var(--color-black);
   border-radius: 50%;
+}
+.skills-card:hover > .particle-shape .shape:nth-child(-n + 7) {
+  animation-play-state: paused;
+}
+@keyframes scaleupdown {
+  0% {
+    transform: scale(1);
+  }
+
+  25% {
+    transform: scale(2.5);
+  }
+
+  50% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }
 .skills-card > .particle-shape .shape:nth-child(1) {
   width: 4.5%;
   height: 3%;
   top: -1%;
   left: 5.5%;
+  animation: scaleupdown infinite 4000ms;
 }
 .skills-card > .particle-shape .shape:nth-child(2) {
   width: 3.5%;
   height: 2.3%;
   top: 5.7%;
-  left: 9%;
+  left: 16%;
+  animation: scaleupdown infinite 4000ms 1000ms;
 }
 .skills-card > .particle-shape .shape:nth-child(3) {
   width: 1.5%;
   height: 1%;
-  top: 9%;
+  top: 11%;
   left: 4%;
+  animation: scaleupdown infinite 4000ms 3000ms;
 }
 .skills-card > .particle-shape .shape:nth-child(4) {
   width: 9%;
   height: 6%;
   top: 18%;
   left: 91%;
+  animation: scaleupdown infinite 4000ms 4000ms;
 }
 .skills-card > .particle-shape .shape:nth-child(5) {
   width: 6%;
   height: 4%;
   top: 73.3%;
   left: 4%;
+  animation: scaleupdown infinite 3000ms 2000ms;
 }
 .skills-card > .particle-shape .shape:nth-child(6) {
   width: 2.5%;
   height: 1.7%;
   top: 92%;
   left: 85.5%;
+  animation: scaleupdown infinite 3000ms 2500ms;
 }
 .skills-card > .particle-shape .shape:nth-child(7) {
   width: 3.5%;
   height: 2.3%;
   top: 93%;
   left: 94%;
+  animation: scaleupdown infinite 3000ms 1500ms;
 }
 
 /* About Me Card Shapes */
@@ -417,7 +489,20 @@ html {
   .skills-card {
   }
 
-  .about-me-card {
+  .about-me-card:hover > .shape:nth-child(1) {
+    transform: translate(0, -10%);
+  }
+  .about-me-card:hover > .shape:nth-child(2) {
+    transform: translate(20%, -8%) rotate(15deg);
+  }
+  .about-me-card:hover > .shape:nth-child(3) {
+    transform: translate(0, 5%);
+  }
+  .about-me-card:hover > .shape:nth-child(4) {
+    transform: translate(0, -20%);
+  }
+  .about-me-card:hover > .shape:nth-child(5) {
+    transform: translate(10%, 10%);
   }
 }
 
