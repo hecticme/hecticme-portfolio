@@ -1,4 +1,15 @@
 /* Global */
+.hidden {
+  opacity: 0;
+  transform: translateY(1rem);
+  transition-property: opacity, transform;
+  transition-duration: 500ms;
+  transition-timing-function: ease-in-out;
+}
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 :root {
   --font-header: 'Playfair Display', serif;
@@ -304,7 +315,6 @@ html {
   top: 71.3%;
   left: 67.5%;
 }
-
 /* Skills Card Shapes */
 .skills-card {
   background-color: #fd8a8a;
@@ -376,7 +386,7 @@ html {
   height: 3%;
   top: -1%;
   left: 5.5%;
-  animation: scaleupdown infinite 4000ms;
+  animation: scaleupdown infinite 3000ms;
 }
 .skills-card > .particle-shape .shape:nth-child(2) {
   width: 3.5%;
@@ -397,7 +407,7 @@ html {
   height: 6%;
   top: 18%;
   left: 91%;
-  animation: scaleupdown infinite 4000ms 4000ms;
+  animation: scaleupdown infinite 4000ms 3000ms;
 }
 .skills-card > .particle-shape .shape:nth-child(5) {
   width: 6%;
@@ -483,12 +493,6 @@ html {
 
 /* Hover State Card */
 @media (hover: hover) {
-  .works-card {
-  }
-
-  .skills-card {
-  }
-
   .about-me-card:hover > .shape:nth-child(1) {
     transform: translate(0, -10%);
   }
@@ -526,7 +530,7 @@ html {
 
 .project {
   height: 31.25rem;
-  width: 43.75rem;
+  width: clamp(16.25rem, 7.08rem + 45.9vw, 43.75rem);
   background-color: hsl(60, 44%, 89%);
 }
 
@@ -534,6 +538,55 @@ html {
 
 #skills {
   padding-block: 6.25rem;
+}
+.skills-layout-container {
+  display: flex;
+  justify-content: center;
+}
+
+.skills-layout {
+  margin-inline: auto;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  gap: 1rem;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 1fr;
+}
+
+.skills-layout .logo {
+  background-color: #f0f0d8;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  width: clamp(3rem, 1rem + 10vw, 9rem);
+  height: clamp(3rem, 1rem + 10vw, 9rem);
+  border-radius: 10px;
+}
+.skills-layout > .columns-separator {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.skills-layout .logo img {
+  width: 30%;
+  height: auto;
+}
+.skills-layout .logo .logo-text {
+  /* opacity: 0; */
+  text-align: center;
+  font-size: clamp(1rem, 0.92rem + 0.42vw, 1.25rem);
+  font-family: var(--font-text);
+  font-weight: var(--fw-light);
+}
+.skills-layout-eye {
+  width: clamp(3rem, 1rem + 10vw, 9rem);
+  height: clamp(3rem, 1rem + 10vw, 9rem);
+  margin-inline: auto;
+  border-radius: 20%;
+  background-color: var(--color-main-black);
 }
 
 /* About Me Section */
@@ -544,4 +597,10 @@ html {
 
 .about-me-img {
   background-color: #01adb5;
+}
+
+.about-me-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
 }

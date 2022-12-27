@@ -16,7 +16,7 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="style.css" />
-    <script src="main.js" defer></script>
+    <script defer src="main.js"></script>
   </head>
   <body>
     <nav class="navbar">
@@ -121,29 +121,79 @@
         src="./assets/skills-abstract-img.svg"
         alt="skills"
       />
-      <div class="skills-eye"></div>
+      <div class="skills-layout-container">
+        <div class="skills-layout">
+          <div class="logo">
+            <img src="./assets/logos/figma.svg" alt="figma" />
+            <p class="logo-text">Figma</p>
+          </div>
+
+          <div class="columns-separator">
+            <div class="logo">
+              <img src="./assets/logos/css.png" alt="css" />
+              <p class="logo-text">Css</p>
+            </div>
+            <div class="logo">
+              <img src="./assets/logos/javascript.png" alt="javascript" />
+              <p class="logo-text">Javascript</p>
+            </div>
+          </div>
+
+          <div class="columns-separator">
+            <div class="logo">
+              <img src="./assets/logos/react.png" alt="react" />
+              <p class="logo-text">React</p>
+            </div>
+            <div class="skills-layout-eye"></div>
+            <div class="logo">
+              <img src="./assets/logos/sass.png" alt="sass" />
+              <p class="logo-text">Sass</p>
+            </div>
+          </div>
+
+          <div class="columns-separator">
+            <div class="logo">
+              <img src="./assets/logos/typescript.png" alt="typescript" />
+              <p class="logo-text">Typescript</p>
+            </div>
+            <div class="logo">
+              <img src="./assets/logos/git.png" alt="git" />
+              <p class="logo-text">Git</p>
+            </div>
+          </div>
+
+          <div class="logo">
+            <img src="./assets/logos/npm.png" alt="npm" />
+            <p class="logo-text">npm</p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section id="about-me">
       <h2 class="section-title">About Me</h2>
       <div class="about-me-img abstract-img"></div>
-
-      <div class="contact-me-request">
-        <!-- <form action="" class="request-form">
-          <label>
-            <input type="text" name="name" required />
-          </label>
-          <label>
-            <input type="email" name="email" required />
-          </label>
-          <label>
-            <input type="text" name="subject" />
-          </label>
-          <label>
-            <input type="text" name="name" />
-          </label>
-        </form> -->
+      <div class="about-me-layout">
+        <div class="about-me-text">
+          <p></p>
+        </div>
       </div>
     </section>
+    <!-- <div class="contact-me-request">
+      <form action="" class="request-form">
+        <label>
+          <input type="text" name="name" required />
+        </label>
+        <label>
+          <input type="email" name="email" required />
+        </label>
+        <label>
+          <input type="text" name="subject" />
+        </label>
+        <label>
+          <input type="text" name="name" />
+        </label>
+      </form>
+    </div> -->
   </body>
 </html>
