@@ -35,7 +35,14 @@
       </div>
     </nav>
 
-    <section class="welcome">
+    <div class="left-nav">
+      <a href="#about-me">Me</a>
+      <a href="#skills">Skills</a>
+      <a href="#works">Works</a>
+      <a href="#home">Home</a>
+    </div>
+
+    <section class="intro">
       <div class="greeting">
         <div class="greeting-text">
           <h1>Ngoc. Minh</h1>
@@ -44,10 +51,12 @@
             animation.
           </p>
         </div>
-        <button class="btn contact-me-btn">Contact Me</button>
-        <a href="#" target="_blank">
-          <button class="btn resume-btn">Resume</button>
-        </a>
+        <div class="greeting-btns">
+          <button class="btn contact-me-btn">Contact Me</button>
+          <a href="#" target="_blank">
+            <button class="btn resume-btn">Resume</button>
+          </a>
+        </div>
       </div>
 
       <div class="nav-card-container">
@@ -89,97 +98,79 @@
       </div>
     </section>
 
-    <section class="body-content">
-      <div class="left-nav">
-        <a href="#home">Home</a>
-        <a href="#works">Works</a>
-        <a href="#skills">Skills</a>
-        <a href="#about-me">Me</a>
+    <section id="works">
+      <h2 class="section-title">What I Have Built</h2>
+      <div class="title-line"></div>
+
+      <div class="project-container">
+        <div class="project first"></div>
+        <div class="project second"></div>
+        <div class="project third"></div>
       </div>
+    </section>
 
-      <section id="works">
-        <h2 class="section-title">What I Have Built</h2>
-        <!-- <div class="works-img abstract-img"></div> -->
-        <img
-          class="abstract-img"
-          src="./assets/works-abstract-img.svg"
-          alt="works"
-        />
+    <section id="skills">
+      <h2 class="section-title">What I Utilize</h2>
+      <div class="title-line"></div>
 
-        <div class="project-container">
-          <div class="project first"></div>
-          <div class="project second"></div>
-          <div class="project third"></div>
-        </div>
-      </section>
+      <div class="skills-layout-container">
+        <div class="skills-layout">
+          <div class="logo">
+            <img src="./assets/logos/figma.svg" alt="figma" />
+            <p class="logo-text">Figma</p>
+          </div>
 
-      <section id="skills">
-        <h2 class="section-title">What I Utilize</h2>
-        <!-- <div class="skills-img abstract-img">
-        </div> -->
-        <img
-          class="abstract-img"
-          src="./assets/skills-abstract-img.svg"
-          alt="skills"
-        />
-        <div class="skills-layout-container">
-          <div class="skills-layout">
+          <div class="columns-separator">
             <div class="logo">
-              <img src="./assets/logos/figma.svg" alt="figma" />
-              <p class="logo-text">Figma</p>
+              <img src="./assets/logos/css.png" alt="css" />
+              <p class="logo-text">Css</p>
             </div>
-
-            <div class="columns-separator">
-              <div class="logo">
-                <img src="./assets/logos/css.png" alt="css" />
-                <p class="logo-text">Css</p>
-              </div>
-              <div class="logo">
-                <img src="./assets/logos/javascript.png" alt="javascript" />
-                <p class="logo-text">Javascript</p>
-              </div>
-            </div>
-
-            <div class="columns-separator">
-              <div class="logo">
-                <img src="./assets/logos/react.png" alt="react" />
-                <p class="logo-text">React</p>
-              </div>
-              <div class="skills-layout-eye"></div>
-              <div class="logo">
-                <img src="./assets/logos/sass.png" alt="sass" />
-                <p class="logo-text">Sass</p>
-              </div>
-            </div>
-
-            <div class="columns-separator">
-              <div class="logo">
-                <img src="./assets/logos/typescript.png" alt="typescript" />
-                <p class="logo-text">Typescript</p>
-              </div>
-              <div class="logo">
-                <img src="./assets/logos/git.png" alt="git" />
-                <p class="logo-text">Git</p>
-              </div>
-            </div>
-
             <div class="logo">
-              <img src="./assets/logos/npm.png" alt="npm" />
-              <p class="logo-text">npm</p>
+              <img src="./assets/logos/javascript.png" alt="javascript" />
+              <p class="logo-text">Javascript</p>
             </div>
           </div>
-        </div>
-      </section>
 
-      <section id="about-me">
-        <h2 class="section-title">About Me</h2>
-        <div class="about-me-img abstract-img"></div>
-        <div class="about-me-layout">
-          <div class="about-me-text">
-            <p></p>
+          <div class="columns-separator">
+            <div class="logo">
+              <img src="./assets/logos/react.png" alt="react" />
+              <p class="logo-text">React</p>
+            </div>
+            <div class="skills-layout-eye"></div>
+            <div class="logo">
+              <img src="./assets/logos/sass.png" alt="sass" />
+              <p class="logo-text">Sass</p>
+            </div>
+          </div>
+
+          <div class="columns-separator">
+            <div class="logo">
+              <img src="./assets/logos/typescript.png" alt="typescript" />
+              <p class="logo-text">Typescript</p>
+            </div>
+            <div class="logo">
+              <img src="./assets/logos/git.png" alt="git" />
+              <p class="logo-text">Git</p>
+            </div>
+          </div>
+
+          <div class="logo">
+            <img src="./assets/logos/npm.png" alt="npm" />
+            <p class="logo-text">npm</p>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
+
+    <section id="about-me">
+      <h2 class="section-title">About Me</h2>
+      <div class="title-line"></div>
+
+      <div class="about-me-layout">
+        <div class="about-me-text">
+          <p></p>
+        </div>
+      </div>
     </section>
     <!-- <div class="contact-me-request">
       <form action="" class="request-form">

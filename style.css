@@ -1,16 +1,4 @@
 /* Global */
-.hidden {
-  opacity: 0;
-  transform: translateY(1rem);
-  transition-property: opacity, transform;
-  transition-duration: 500ms;
-  transition-timing-function: ease-in-out;
-}
-.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 :root {
   --font-header: 'Playfair Display', serif;
   --font-text: 'Josefin Sans', sans-serif;
@@ -39,22 +27,18 @@ body {
   color: var(--color-main-black);
 }
 
-.abstract-img {
-  margin-block: 2.5rem;
+.title-line {
   margin-inline: auto;
-  width: clamp(16.25rem, 16rem + 4.1vw, 18.75rem);
-  height: 3.75rem;
-  border-radius: 5px;
-  background-color: var(--color-main-black);
-  overflow: hidden;
-  display: block;
+  width: clamp(3.125rem, 1.04rem + 10.42vw, 9.375rem);
+  border-bottom: 2px solid var(--color-main-black);
+  margin-block: 0.625rem 2.5rem;
 }
 
 .section-title {
   text-align: center;
   font-family: var(--font-header);
   font-weight: var(--fw-semibold);
-  font-size: 2.5rem;
+  font-size: clamp(1.375rem, 1rem + 1.875vw, 2.5rem);
 }
 
 .btn {
@@ -71,6 +55,7 @@ body {
 
 html {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 *,
@@ -87,8 +72,7 @@ html {
 /* Navbar Style */
 
 .navbar {
-  width: calc(100% - 5rem);
-  max-width: 80rem;
+  width: min(80rem, 100% - 5rem);
   margin-inline: auto;
   display: flex;
   margin-block: 1.875rem;
@@ -122,33 +106,39 @@ html {
   height: 1.625rem;
 }
 
-/* Welcome section */
-.welcome {
+/* Intro section */
+.intro {
   margin-block-end: 18.75rem;
   display: flex;
-  width: calc(100% - 5rem);
-  max-width: 80rem;
+  justify-content: space-between;
+  width: min(80rem, 100% - 5rem);
   margin-inline: auto;
   margin-block-start: 9.375rem;
   align-items: flex-end;
 }
 
 @media (max-width: 68.25rem) {
-  .welcome {
+  .intro {
     flex-wrap: wrap;
+    justify-content: center;
   }
   .nav-card-container {
     margin-block-start: 2.5rem;
+  }
+  .greeting-text > h1,
+  .greeting-text > p {
+    text-align: center;
+  }
+  .greeting-btns {
+    display: flex;
+    justify-content: center;
   }
 }
 
 /* Greeting */
 
-.greeting {
-  margin-inline-end: auto;
-}
 .greeting-text {
-  max-width: 26.875rem;
+  max-width: 26rem;
 }
 .greeting-text > h1 {
   font-family: var(--font-signature);
@@ -178,20 +168,30 @@ html {
   color: var(--color-main-white);
 }
 /* Navigation Cards */
-.body-content {
-  position: relative;
-}
-
 .left-nav {
-  position: absolute;
-  left: 5%;
-  transform: rotate(-90deg);
   font-family: var(--font-header);
+  opacity: 0;
+  pointer-events: none;
+  left: -5rem;
+  position: fixed;
+  top: 50%;
+  transform: translateX(-1rem) rotate(-90deg);
+  transition-property: opacity, transform;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.18, 0.72, 0.57, 0.9);
 }
-
+.show {
+  opacity: 1;
+  transform: translateX(0) rotate(-90deg);
+  pointer-events: auto;
+}
 .left-nav > a {
   color: var(--color-main-black);
-  margin-inline-end: 10px;
+  margin-inline-end: 0.625rem;
+}
+.left-nav > a:hover {
+  text-decoration: underline;
+  color: var(--color-bright-orange);
 }
 
 .nav-card-container {
@@ -393,7 +393,7 @@ html {
 
 /* About Me Card Shapes */
 .about-me-card {
-  background-color: #01adb5;
+  background-color: var(--color-bright-orange);
 }
 
 .about-me-card > .shape:nth-child(1) {
@@ -452,23 +452,6 @@ html {
 }
 
 /* Hover State Card */
-@media (hover: hover) {
-  .about-me-card:hover > .shape:nth-child(1) {
-    transform: translate(0, -10%);
-  }
-  .about-me-card:hover > .shape:nth-child(2) {
-    transform: translate(20%, -8%) rotate(15deg);
-  }
-  .about-me-card:hover > .shape:nth-child(3) {
-    transform: translate(0, 5%);
-  }
-  .about-me-card:hover > .shape:nth-child(4) {
-    transform: translate(0, -20%);
-  }
-  .about-me-card:hover > .shape:nth-child(5) {
-    transform: translate(10%, 10%);
-  }
-}
 
 /* Works Section */
 
@@ -491,6 +474,7 @@ html {
 .project {
   height: 31.25rem;
   width: clamp(16.25rem, 7.08rem + 45.9vw, 43.75rem);
+  border-radius: 10px;
 }
 .project.first {
   background-color: var(--color-bright-orange);
