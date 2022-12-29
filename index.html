@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;600&family=Monsieur+La+Doulaise&family=Playfair+Display:wght@600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&family=Monsieur+La+Doulaise&family=Playfair+Display:wght@600&display=swap"
       rel="stylesheet"
     />
     <script
@@ -171,7 +171,22 @@
 
       <div class="about-me-layout">
         <div class="about-me-text">
-          <p></p>
+          <h3>Hello again</h3>
+          <p>
+            Since you have scrolled to here, I sincerely hope that you enjoy my
+            personal website. As you can probably see, or not, I love making
+            websites with graphical animation.
+          </p>
+          <p>
+            My journey actually started with being a diplomatic college student,
+            in which I decided to drop out during the second year. After that I
+            tried to get myself into UI/UX design, but it was futile. Now here I
+            am, a web developer.
+          </p>
+          <p>
+            Want to learn more about me or simply want to talk?
+            <span data-modal-target="#contact-form">Contact Me</span>
+          </p>
         </div>
       </div>
     </section>
@@ -180,8 +195,19 @@
       <div data-close-btn class="close-btn">
         <i class="fa-solid fa-xmark"></i>
       </div>
-      <div class="btn send-request-btn">Send Request</div>
+      <form action="" class="contact-form-inputs">
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" />
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" />
+        <label for="subject">Subject:</label>
+        <input type="text" name="subject" id="subject" />
+        <label for="message">Message:</label>
+        <textarea name="message" id="message" rows="6"></textarea>
+        <button class="btn send-request-btn">Send Request</button>
+      </form>
     </div>
+
     <div class="overlay"></div>
   </body>
 </html>
