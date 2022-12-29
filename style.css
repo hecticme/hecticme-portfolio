@@ -44,11 +44,14 @@ body {
 .btn {
   border-radius: 5px;
   border: none;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
-    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
   font-family: var(--font-text);
   font-weight: var(--fw-semibold);
   cursor: pointer;
+  transition: transform 250ms ease-in-out, box-shadow 250ms ease-in-out;
+}
+.btn:hover {
+  transform: translateY(-10%);
+  box-shadow: hsla(163, 70%, 15%, 0.15) 0px 20px 100px 0px;
 }
 
 /* Reset */
@@ -95,6 +98,7 @@ html {
 }
 .social-link {
   transition: transform 100ms ease-in-out;
+  color: var(--color-main-black);
 }
 .social-link:hover {
   color: var(--color-light-brown);
@@ -180,7 +184,7 @@ html {
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.18, 0.72, 0.57, 0.9);
 }
-.show {
+.show-left-nav {
   opacity: 1;
   transform: translateX(0) rotate(-90deg);
   pointer-events: auto;
@@ -494,51 +498,65 @@ html {
 .skills-layout-container {
   display: flex;
   justify-content: center;
+  place-items: center;
 }
 
 .skills-layout {
   margin-inline: auto;
   display: grid;
-  justify-items: center;
-  align-items: center;
-  gap: 1rem;
+  place-content: center;
+  place-items: center;
+  gap: 0.625rem;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: 1fr;
 }
 
 .skills-layout .logo {
-  background-color: #f0f0d8;
+  background-color: var(--color-main-white);
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 0.2rem;
   justify-content: center;
   align-items: center;
-  width: clamp(3rem, 1rem + 10vw, 9rem);
-  height: clamp(3rem, 1rem + 10vw, 9rem);
-  border-radius: 10px;
+  width: clamp(2.625rem, 1.84rem + 3.96vw, 5rem);
+  aspect-ratio: 1 / 1;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  overflow: hidden;
 }
 .skills-layout > .columns-separator {
   display: flex;
+  justify-content: center;
+  place-items: center;
   flex-direction: column;
-  gap: 1rem;
+  row-gap: 0.625rem;
 }
 .skills-layout .logo img {
-  width: 30%;
-  height: auto;
+  width: 40%;
 }
+
 .skills-layout .logo .logo-text {
-  /* opacity: 0; */
+  opacity: 0;
+  position: absolute;
+  pointer-events: none;
   text-align: center;
+  color: var(--color-main-white);
   font-size: clamp(1rem, 0.92rem + 0.42vw, 1.25rem);
   font-family: var(--font-text);
   font-weight: var(--fw-light);
+  transition: opacity 250ms ease-in-out;
+}
+.skills-layout .logo .logo-text.show-text {
+  opacity: 1;
 }
 .skills-layout-eye {
-  width: clamp(3rem, 1rem + 10vw, 9rem);
-  height: clamp(3rem, 1rem + 10vw, 9rem);
-  margin-inline: auto;
-  border-radius: 20%;
-  background-color: var(--color-main-black);
+  width: clamp(2.625rem, 1.84rem + 3.96vw, 5rem);
+  border-radius: 50%;
+  border: 0.625rem solid var(--color-main-white);
+  aspect-ratio: 1 / 1;
+  background-color: var(--color-dark-green);
+  cursor: pointer;
 }
 
 /* About Me Section */
@@ -555,4 +573,64 @@ html {
   display: grid;
   grid-template-columns: 1fr 1fr;
   justify-content: center;
+}
+
+/* Contact form */
+.overlay {
+  opacity: 0;
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: hsla(0, 0%, 0%, 0.5);
+  pointer-events: none;
+}
+.overlay.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+#contact-form {
+  display: flex;
+  justify-content: center;
+  place-items: center;
+  background-color: var(--color-light-brown);
+  width: clamp(18.75rem, 11.875rem + 34.375vw, 39.375rem);
+  height: 35rem;
+  border-radius: 5px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  z-index: 10;
+  transition: transform 250ms ease-in-out;
+}
+#contact-form.show {
+  transform: translate(-50%, -50%) scale(1);
+}
+.close-btn {
+  cursor: pointer;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  place-items: center;
+  font-size: 1rem;
+  right: 0.4rem;
+  top: 0.4rem;
+  background-color: var(--color-dark-green);
+  color: var(--color-main-white);
+  width: 2rem;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+}
+.close-btn:hover {
+  background-color: var(--color-bright-orange);
+}
+.send-request-btn {
+  background: var(--color-dark-green);
+  text-align: center;
+  color: var(--color-main-white);
+  padding: 1rem;
+  width: 10rem;
 }

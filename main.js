@@ -24,9 +24,9 @@ const intro = document.querySelector('.intro');
 const flyInObserver = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (!entry.isIntersecting) {
-      leftNav.classList.add('show');
+      leftNav.classList.add('show-left-nav');
     } else {
-      leftNav.classList.remove('show');
+      leftNav.classList.remove('show-left-nav');
     }
   });
 }, observeOptions);
@@ -91,3 +91,36 @@ skillsCard.onmouseout = () => {
     }
   );
 };
+// Logo layout show name
+const logoTexts = document.querySelectorAll('.logo-text');
+const logoEye = document.querySelector('.skills-layout-eye');
+const toggleLogoName = () => {
+  logoTexts.forEach((logoText) => {
+    logoText.classList.toggle('show-text');
+  });
+};
+logoEye.addEventListener('click', toggleLogoName);
+// Open and close contact me form
+const openContactBtn = document.querySelectorAll(
+  '[data-modal-target="#contact-form"]'
+);
+const closeContactBtn = document.querySelectorAll('[data-close-btn]');
+const overlay = document.querySelector('.overlay');
+const contactForm = document.querySelector('#contact-form');
+
+openContactBtn.forEach((btn) => {
+  btn.addEventListener('click', () => {
+    contactForm.classList.add('show');
+    overlay.classList.add('show');
+  });
+});
+closeContactBtn.forEach((btn) => {
+  btn.addEventListener('click', () => {
+    contactForm.classList.remove('show');
+    overlay.classList.remove('show');
+  });
+});
+overlay.addEventListener('click', () => {
+  contactForm.classList.remove('show');
+  overlay.classList.remove('show');
+});

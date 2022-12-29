@@ -19,7 +19,7 @@
     <script defer src="main.js"></script>
   </head>
   <body>
-    <nav class="navbar">
+    <header class="navbar">
       <p class="page-logo" id="home">hectic.</p>
       <div class="social-links-container">
         <a
@@ -33,7 +33,7 @@
           <i class="fa-brands fa-linkedin"></i>
         </a>
       </div>
-    </nav>
+    </header>
 
     <div class="left-nav">
       <a href="#about-me">Me</a>
@@ -52,7 +52,9 @@
           </p>
         </div>
         <div class="greeting-btns">
-          <button class="btn contact-me-btn">Contact Me</button>
+          <button data-modal-target="#contact-form" class="btn contact-me-btn">
+            Contact Me
+          </button>
           <a href="#" target="_blank">
             <button class="btn resume-btn">Resume</button>
           </a>
@@ -112,11 +114,11 @@
     <section id="skills">
       <h2 class="section-title">What I Utilize</h2>
       <div class="title-line"></div>
-
+      <!-- Eye layout -->
       <div class="skills-layout-container">
         <div class="skills-layout">
           <div class="logo">
-            <img src="./assets/logos/figma.svg" alt="figma" />
+            <img src="./assets/logos/figma.png" alt="figma" />
             <p class="logo-text">Figma</p>
           </div>
 
@@ -160,6 +162,7 @@
           </div>
         </div>
       </div>
+      <!-- End of "Eye layout" -->
     </section>
 
     <section id="about-me">
@@ -172,21 +175,13 @@
         </div>
       </div>
     </section>
-    <!-- <div class="contact-me-request">
-      <form action="" class="request-form">
-        <label>
-          <input type="text" name="name" required />
-        </label>
-        <label>
-          <input type="email" name="email" required />
-        </label>
-        <label>
-          <input type="text" name="subject" />
-        </label>
-        <label>
-          <input type="text" name="name" />
-        </label>
-      </form>
-    </div> -->
+
+    <div id="contact-form">
+      <div data-close-btn class="close-btn">
+        <i class="fa-solid fa-xmark"></i>
+      </div>
+      <div class="btn send-request-btn">Send Request</div>
+    </div>
+    <div class="overlay"></div>
   </body>
 </html>
