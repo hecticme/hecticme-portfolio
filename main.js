@@ -39,14 +39,21 @@ flyInObserver.observe(intro);
 const eye = document.querySelector('.eye');
 const eyeBall = document.querySelector('.eye-ball');
 // Eyes follow cursor logic
-skillsCard.onmousemove = (e) => {
-  const rect = skillsCard.getBoundingClientRect();
-  const mouseX = e.clientX - rect.left;
-  const mouseY = e.clientY - rect.top;
+const getMousePosition = (event, target) => {
+  const result = [];
+  const rect = target.getBoundingClientRect();
+  const mouseX = event.clientX - rect.left;
+  const mouseY = event.clientY - rect.top;
   const centerX = (rect.right - rect.left) / 2;
   const centerY = (rect.bottom - rect.top) / 2;
   const moveX = mouseX - centerX;
   const moveY = mouseY - centerY;
+  result.push(moveX, moveY);
+  return result;
+};
+
+skillsCard.onmousemove = (e) => {
+  const [moveX, moveY] = getMousePosition(e, skillsCard);
   const panX = 0.1 * moveX;
   const panY = 0.1 * moveY;
   eyeBall.animate(
@@ -146,3 +153,26 @@ overlay.addEventListener('click', () => {
   overlay.classList.remove('show');
 });
 // End of Open and close contact me form
+
+// About me section eye following logic
+const aboutMeSection = document.querySelector('#about-me');
+const aboutMeEye = document.querySelector('.about-me-img #eye');
+const aboutMeEyeBall = document.querySelector('.about-me-img #eye-ball');
+
+aboutMeSection.onmousemove = (e) => {
+  const [moveX, moveY] = getMousePosition(e, aboutMeEye);
+  const panX = 0.02 * moveX;
+  const panY = 0.02 * moveY;
+
+  aboutMeEyeBall.animate(
+    {
+      transform: `translate(${panX}px, ${panY}px)`,
+    },
+    {
+      duration: 100,
+      easing: 'ease-in-out',
+      fill: 'forwards',
+    }
+  );
+};
+// End of About me section eye following logic

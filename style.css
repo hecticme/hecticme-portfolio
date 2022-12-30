@@ -294,7 +294,7 @@ html {
 .skills-card {
   background-color: var(--color-light-pink);
 }
-/* Eyes style */
+/* Eye style */
 .skills-card > .eye {
   width: 50%;
   height: 33.3%;
@@ -304,19 +304,19 @@ html {
   border-radius: 100% 0;
   border: 1px solid var(--color-dark-green);
   background-color: var(--color-light-brown);
-  overflow: clip;
+  overflow: hidden;
   transition: box-shadow 1000ms ease-in-out;
   animation: 3000ms eye-moving ease-in-out infinite;
 }
 @keyframes eye-moving {
   0% {
-    top: 48%;
+    top: 49%;
   }
   50% {
-    top: 52%;
+    top: 51%;
   }
   100% {
-    top: 48%;
+    top: 49%;
   }
 }
 .skills-card:hover > .eye {
@@ -388,6 +388,7 @@ html {
   }
 }
 /* End of Hide eye-lid when can not hover */
+/* End of Eye style */
 .skills-card > .particle-shape > .shape {
   background-color: var(--color-dark-green);
   border-radius: 50%;
@@ -623,7 +624,7 @@ html {
   overflow: hidden;
 }
 .skills-layout .logo img {
-  width: 30%;
+  width: 35%;
   transition: transform 250ms ease-in-out;
 }
 
