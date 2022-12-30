@@ -1,0 +1,11 @@
+<svg width="430" height="482" viewBox="0 0 430 482" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="about-me-img">
+<circle id="dot-ellipse" cx="404.358" cy="455.642" r="25.6422" fill="#0B3F30"/>
+<rect id="m-rect" x="215" y="355.046" width="128.211" height="126.239" rx="5" fill="#ED572B"/>
+<rect id="n-rect" x="51.2844" y="355.046" width="128.211" height="126.239" rx="5" fill="#F1BD9D"/>
+<rect id="h-rect" y="185.413" width="128.211" height="128.211" rx="5" fill="#E39A2A"/>
+<rect id="i-rect" x="266.284" width="128.211" height="128.211" rx="5" fill="#EED7B9"/>
+<ellipse id="eye" cx="329.5" cy="66.5" rx="41.5" ry="25.5" fill="#0B3F30"/>
+<circle id="eye-ball" cx="329.5" cy="66.5" r="11.5" fill="#ED572B"/>
+</g>
+</svg>
