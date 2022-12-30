@@ -116,48 +116,79 @@
       <!-- Eye layout -->
       <div class="skills-layout-container">
         <div class="skills-layout">
-          <div class="logo">
-            <img src="./assets/logos/figma.png" alt="figma" />
-            <p class="logo-text">Figma</p>
+          <div class="logo" data-logo-target="figma">
+            <img
+              src="./assets/logos/figma.png"
+              alt="figma"
+              id="logo-img-figma"
+            />
+            <p class="logo-text" id="logo-text-figma">Figma</p>
           </div>
 
           <div class="columns-separator">
-            <div class="logo">
-              <img src="./assets/logos/css.png" alt="css" />
-              <p class="logo-text">Css</p>
+            <div class="logo" data-logo-target="vite">
+              <img
+                src="./assets/logos/vite.png"
+                alt="vite"
+                id="logo-img-vite"
+              />
+              <p class="logo-text" id="logo-text-vite">Vite</p>
             </div>
-            <div class="logo">
-              <img src="./assets/logos/javascript.png" alt="javascript" />
-              <p class="logo-text">Javascript</p>
-            </div>
-          </div>
-
-          <div class="columns-separator">
-            <div class="logo">
-              <img src="./assets/logos/react.png" alt="react" />
-              <p class="logo-text">React</p>
-            </div>
-            <div class="logo"></div>
-            <div class="logo">
-              <img src="./assets/logos/sass.png" alt="sass" />
-              <p class="logo-text">Sass</p>
+            <div class="logo" data-logo-target="javascript">
+              <img
+                src="./assets/logos/javascript.png"
+                style="border-radius: 5px"
+                alt="javascript"
+                id="logo-img-javascript"
+              />
+              <p class="logo-text" id="logo-text-javascript">Javascript</p>
             </div>
           </div>
 
           <div class="columns-separator">
-            <div class="logo">
-              <img src="./assets/logos/typescript.png" alt="typescript" />
-              <p class="logo-text">Typescript</p>
+            <div class="logo" data-logo-target="typescript">
+              <img
+                src="./assets/logos/typescript.png"
+                alt="typescript"
+                id="logo-img-typescript"
+              />
+              <p class="logo-text" id="logo-text-typescript">Typescript</p>
             </div>
-            <div class="logo">
-              <img src="./assets/logos/git.png" alt="git" />
-              <p class="logo-text">Git</p>
+            <div class="logo" data-logo-target="react">
+              <img
+                src="./assets/logos/react.png"
+                alt="react"
+                id="logo-img-react"
+              />
+              <p class="logo-text" id="logo-text-react">React</p>
+            </div>
+            <div class="logo" data-logo-target="sass">
+              <img
+                src="./assets/logos/sass.png"
+                alt="sass"
+                id="logo-img-sass"
+              />
+              <p class="logo-text" id="logo-text-sass">Sass</p>
+            </div>
+          </div>
+          <div class="columns-separator">
+            <div class="logo" data-logo-target="github">
+              <img
+                src="./assets/logos/github.png"
+                alt="github"
+                id="logo-img-github"
+              />
+              <p class="logo-text" id="logo-text-github">Github</p>
+            </div>
+            <div class="logo" data-logo-target="git">
+              <img src="./assets/logos/git.png" alt="git" id="logo-img-git" />
+              <p class="logo-text" id="logo-text-git">Git</p>
             </div>
           </div>
 
-          <div class="logo">
-            <img src="./assets/logos/npm.png" alt="npm" />
-            <p class="logo-text">npm</p>
+          <div class="logo" data-logo-target="npm">
+            <img src="./assets/logos/npm.png" alt="npm" id="logo-img-npm" />
+            <p class="logo-text" id="logo-text-npm">npm</p>
           </div>
         </div>
       </div>
@@ -194,7 +225,7 @@
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <g id="about-me-img">
+            <g>
               <circle
                 id="dot-ellipse"
                 cx="404.358"

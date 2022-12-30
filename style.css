@@ -586,52 +586,63 @@ html {
   display: grid;
   place-content: center;
   place-items: center;
-  gap: 0.625rem;
+  gap: clamp(0.4rem, 0.2rem + 1vw, 1rem);
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: 1fr;
-}
-
-.skills-layout .logo {
-  background-color: var(--color-main-white);
-  display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
-  justify-content: center;
-  align-items: center;
-  width: clamp(2.625rem, 1.84rem + 3.96vw, 5rem);
-  aspect-ratio: 1 / 1;
-  border-radius: 5px;
-  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
-    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
-  overflow: hidden;
 }
 .skills-layout > .columns-separator {
   display: flex;
   justify-content: center;
   place-items: center;
   flex-direction: column;
-  row-gap: 0.625rem;
+  row-gap: clamp(0.4rem, 0.2rem + 1vw, 1rem);
+}
+@media (max-width: 50rem) {
+  .skills-layout {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, 1fr);
+  }
+  .skills-layout > .columns-separator {
+    flex-direction: row;
+    column-gap: clamp(0.4rem, 0.2rem + 1vw, 1rem);
+    row-gap: 0;
+  }
+}
+
+.skills-layout .logo {
+  background-color: var(--color-main-white);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: clamp(5rem, 4rem + 5vw, 8rem);
+  aspect-ratio: 7 / 5;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  overflow: hidden;
 }
 .skills-layout .logo img {
-  width: 45%;
+  width: 30%;
+  transition: transform 250ms ease-in-out;
 }
 
 .skills-layout .logo .logo-text {
-  opacity: 0;
   position: absolute;
-  pointer-events: none;
   text-align: center;
-  color: var(--color-main-black);
-  font-size: clamp(1rem, 0.92rem + 0.42vw, 1.25rem);
+  font-size: clamp(0.8rem, 0.65rem + 0.75vw, 1.25rem);
   font-family: var(--font-text);
-  font-weight: var(--fw-light);
-  transform: translateY(2rem);
-  transition: opacity 250ms ease-in-out;
+  font-weight: var(--fw-regular);
+  color: var(--color-main-black);
+  transform: scale(0);
+  transition: transform 250ms ease-in-out;
 }
-.skills-layout .logo .logo-text.show-text {
-  opacity: 1;
+.skills-layout .logo .logo-text.show {
+  transform: scale(1);
 }
-
+.skills-layout .logo img.show {
+  transform: scale(0);
+}
 /* About Me Section */
 
 #about-me {

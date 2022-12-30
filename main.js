@@ -15,6 +15,8 @@ worksCard.addEventListener('click', () => {
 aboutMeCard.addEventListener('click', () => {
   aboutMeCardLink.click();
 });
+// End of Card Navigation
+
 // Fly-in animation for left-nav
 const observeOptions = {
   rootMargin: '100px 0px 0px 0px',
@@ -31,6 +33,8 @@ const flyInObserver = new IntersectionObserver((entries) => {
   });
 }, observeOptions);
 flyInObserver.observe(intro);
+// End of Fly-in animation for left-nav
+
 // Skill cards logic
 const eye = document.querySelector('.eye');
 const eyeBall = document.querySelector('.eye-ball');
@@ -91,15 +95,32 @@ skillsCard.onmouseout = () => {
     }
   );
 };
-// Logo layout show name
-const logoTexts = document.querySelectorAll('.logo-text');
-const logoEye = document.querySelector('.skills-layout-eye');
-const toggleLogoName = () => {
-  logoTexts.forEach((logoText) => {
-    logoText.classList.toggle('show-text');
+// End of Skill cards logic
+
+// Logo layout show name on hover
+const logos = document.querySelectorAll('.logo');
+logos.forEach((logo) => {
+  logo.addEventListener('mouseover', () => {
+    const img = document.querySelector(`#logo-img-${logo.dataset.logoTarget}`);
+    const text = document.querySelector(
+      `#logo-text-${logo.dataset.logoTarget}`
+    );
+    img.classList.add('show');
+    text.classList.add('show');
   });
-};
-logoEye.addEventListener('click', toggleLogoName);
+});
+logos.forEach((logo) => {
+  logo.addEventListener('mouseout', () => {
+    const img = document.querySelector(`#logo-img-${logo.dataset.logoTarget}`);
+    const text = document.querySelector(
+      `#logo-text-${logo.dataset.logoTarget}`
+    );
+    img.classList.remove('show');
+    text.classList.remove('show');
+  });
+});
+// End of Logo layout show name on hover
+
 // Open and close contact me form
 const openContactBtn = document.querySelectorAll(
   '[data-modal-target="#contact-form"]'
@@ -124,3 +145,4 @@ overlay.addEventListener('click', () => {
   contactForm.classList.remove('show');
   overlay.classList.remove('show');
 });
+// End of Open and close contact me form
