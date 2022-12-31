@@ -52,9 +52,22 @@ body {
   cursor: pointer;
   transition: transform 250ms ease-in-out, box-shadow 250ms ease-in-out;
 }
+.btn::after {
+  content: '';
+  width: 30%;
+  border-bottom: 3px solid var(--color-bright-orange);
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 0) scale(0);
+  transition: transform 100ms ease-in-out;
+}
 .btn:hover {
   transform: translateY(-10%);
   box-shadow: hsla(163, 70%, 15%, 0.15) 0px 20px 100px 0px;
+}
+.btn:hover::after {
+  transform: translate(-50%, 0.625rem) scale(1);
 }
 
 /* Reset */
