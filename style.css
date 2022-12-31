@@ -2,7 +2,6 @@
 :root {
   --font-header: 'Playfair Display', serif;
   --font-text: 'Josefin Sans', sans-serif;
-  --font-signature: 'Monsieur La Doulaise', cursive;
   --fw-semibold: 600;
   --fw-regular: 400;
   --fw-light: 300;
@@ -144,15 +143,25 @@ html {
 }
 
 /* Greeting */
+.greeting {
+  opacity: 0;
+  transform: translateY(2rem);
+  transition: transform 250ms var(--ani-timing-bezier) 500ms,
+    opacity 250ms var(--ani-timing-bezier) 500ms;
+}
+.greeting.show {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 .greeting-text {
-  max-width: 26rem;
+  max-width: 28rem;
 }
 .greeting-text > h1 {
-  font-family: var(--font-signature);
-  font-weight: 400;
-  font-size: clamp(3.125rem, 2.5rem + 3.125vw, 5rem);
-  margin-block-end: 0.625rem;
+  font-family: var(--font-header);
+  font-weight: var(--fw-semibold);
+  font-size: clamp(1.875rem, 1.459rem + 2.083vw, 3.125rem);
+  margin-block-end: 1.25rem;
 }
 .greeting-text > p {
   font-size: clamp(1rem, 0.92rem + 0.42vw, 1.25rem);
@@ -235,6 +244,24 @@ html {
   position: relative;
   overflow: hidden;
   cursor: pointer;
+  opacity: 0;
+  transform: translateY(2rem);
+  transition-property: transform, opacity;
+  transition-timing-function: var(--ani-timing-bezier);
+  transition-duration: 500ms;
+  transition-delay: 500ms;
+}
+.works-card.show,
+.skills-card.show,
+.about-me-card.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+.skills-card {
+  transition-delay: 600ms;
+}
+.about-me-card {
+  transition-delay: 700ms;
 }
 
 .works-card .shape,
@@ -302,7 +329,7 @@ html {
   left: 50%;
   transform: translate(-50%, -50%) rotate(45deg);
   border-radius: 100% 0;
-  border: 1px solid var(--color-dark-green);
+  border: 2px solid var(--color-dark-green);
   background-color: var(--color-light-brown);
   overflow: hidden;
   transition: box-shadow 1000ms ease-in-out;
@@ -342,7 +369,7 @@ html {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  border-radius: 50%;
+  border-radius: 10% 90%;
   background-color: var(--color-dark-green);
 }
 @keyframes eye-ball-moving {
@@ -384,7 +411,7 @@ html {
     opacity: 0;
   }
   .skills-card > .eye > .eye-ball {
-    animation: 8000ms eye-ball-moving var(--ani-timing-bezier) infinite;
+    animation: 8000ms eye-ball-moving 3000ms var(--ani-timing-bezier) infinite;
   }
 }
 /* End of Hide eye-lid when can not hover */
@@ -575,6 +602,9 @@ html {
 
 #skills {
   padding-block: 6.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .skills-layout-container {
   display: flex;
@@ -644,8 +674,14 @@ html {
 .skills-layout .logo img.show {
   transform: scale(0);
 }
-/* About Me Section */
+.skills-text {
+  margin-inline: auto;
+  margin-block-start: 2.5rem;
+  text-align: center;
+  font-size: clamp(1rem, 0.92rem + 0.42vw, 1.25rem);
+}
 
+/* About Me Section */
 #about-me {
   background-color: var(--color-background);
   padding-block: 6.25rem;
@@ -662,6 +698,16 @@ html {
   width: clamp(17.5rem, 14.375rem + 15.625vw, 26.875rem);
   aspect-ratio: 430 / 482;
 }
+.about-me-img {
+  opacity: 0;
+  transform: translateY(2rem);
+  transition: transform 250ms var(--ani-timing-bezier) 250ms,
+    opacity 250ms var(--ani-timing-bezier) 250ms;
+}
+.about-me-img.show {
+  opacity: 1;
+  transform: translateY(0);
+}
 @media (max-width: 65.3125rem) {
   .about-me-layout {
     flex-direction: column;
@@ -675,6 +721,14 @@ html {
   display: flex;
   flex-flow: column wrap;
   gap: 1.25rem;
+  opacity: 0;
+  transform: translateY(2rem);
+  transition: transform 250ms var(--ani-timing-bezier),
+    opacity 250ms var(--ani-timing-bezier);
+}
+.about-me-text.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 .about-me-text h3 {
   font-family: var(--font-header);

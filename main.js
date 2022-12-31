@@ -23,16 +23,16 @@ const observeOptions = {
 };
 const leftNav = document.querySelector('.left-nav');
 const intro = document.querySelector('.intro');
-const flyInObserver = new IntersectionObserver((entries) => {
+const leftNavObserver = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (!entry.isIntersecting) {
-      leftNav.classList.add('show-left-nav');
+      leftNav.classList.toggle('show-left-nav');
     } else {
       leftNav.classList.remove('show-left-nav');
     }
   });
 }, observeOptions);
-flyInObserver.observe(intro);
+leftNavObserver.observe(intro);
 // End of Fly-in animation for left-nav
 
 // Skill cards logic
@@ -176,3 +176,29 @@ aboutMeSection.onmousemove = (e) => {
   );
 };
 // End of About me section eye following logic
+
+// Fly-in animation
+const flyInObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+        flyInObserver.unobserve(entry.target);
+      }
+    });
+  },
+  {
+    threshold: 0.7,
+  }
+);
+
+const greeting = document.querySelector('.greeting');
+const aboutMeText = document.querySelector('.about-me-text');
+const aboutMeImg = document.querySelector('.about-me-img');
+
+flyInObserver.observe(skillsCard);
+flyInObserver.observe(worksCard);
+flyInObserver.observe(aboutMeCard);
+flyInObserver.observe(greeting);
+flyInObserver.observe(aboutMeText);
+flyInObserver.observe(aboutMeImg);
