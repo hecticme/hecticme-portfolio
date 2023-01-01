@@ -26,9 +26,9 @@ const intro = document.querySelector('.intro');
 const leftNavObserver = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (!entry.isIntersecting) {
-      leftNav.classList.toggle('show-left-nav');
+      leftNav.classList.add('show');
     } else {
-      leftNav.classList.remove('show-left-nav');
+      leftNav.classList.remove('show');
     }
   });
 }, observeOptions);

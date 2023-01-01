@@ -209,12 +209,13 @@ html {
   transition-duration: 250ms;
   transition-timing-function: var(--ani-timing-bezier);
 }
-.show-left-nav {
+.left-nav.show {
   opacity: 1;
   transform: translateX(0) rotate(-90deg);
   pointer-events: auto;
 }
 .left-nav > a {
+  font-size: clamp(0.875rem, 0.84rem + 0.2084vw, 1rem);
   color: var(--color-main-black);
   margin-inline-end: 0.625rem;
 }
@@ -747,6 +748,7 @@ html {
   font-family: var(--font-header);
   font-size: clamp(1.25rem, 1.042rem + 1.042vw, 1.875rem);
   margin-block-end: 0.625rem;
+  line-height: 1.5;
 }
 .about-me-text p {
   font-size: clamp(1rem, 0.92rem + 0.42vw, 1.25rem);
@@ -761,6 +763,8 @@ html {
   text-decoration: underline;
   color: var(--color-dark-green);
 }
+/* End of About me section */
+
 /* Contact form */
 .overlay {
   opacity: 0;
