@@ -19,6 +19,7 @@
 }
 
 a {
+  color: var(--color-main-black);
   text-decoration: none;
   margin: 0;
   padding: 0;
@@ -598,20 +599,79 @@ html {
 }
 
 .project {
-  height: 31.25rem;
-  width: clamp(16.25rem, 7.08rem + 45.9vw, 43.75rem);
+  aspect-ratio: 2 / 1;
+  width: clamp(16.25rem, 1rem + 76.25vw, 62rem);
   border-radius: 10px;
+  overflow: hidden;
+  background-color: var(--color-light-brown);
+  display: flex;
+  justify-content: center;
+  place-items: center;
 }
-.project.first {
-  background-color: var(--color-bright-orange);
+@media (max-width: 60rem) {
+  .project {
+    flex-direction: column;
+  }
 }
-.project.second {
-  background-color: var(--color-dark-green);
+.fa-arrow-up-right-from-square {
+  padding-inline-start: 0.625rem;
 }
-.project.third {
-  background-color: var(--color-light-pink);
+.project-information {
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding-inline-start: 2.5rem;
 }
 
+.project-img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-bright-orange);
+  width: 50%;
+  height: 100%;
+}
+
+.project-img {
+  width: 90%;
+  opacity: 0;
+  transform: translateY(2rem);
+  transition-property: transform, opacity;
+  transition-timing-function: var(--ani-timing-bezier);
+  transition-duration: 500ms;
+}
+.project-img.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.project-name {
+  font-size: clamp(1.25rem, 1.042rem + 1.042vw, 1.875rem);
+  line-height: 1.5;
+}
+.project-text {
+  font-size: clamp(1rem, 0.92rem + 0.42vw, 1.25rem);
+  padding-block-end: 1.25rem;
+  line-height: 1.5;
+}
+.project-btn-container {
+  display: flex;
+  gap: 0.625rem;
+}
+.live-page,
+.source-code {
+  height: 3rem;
+}
+.live-page {
+  width: 7rem;
+  background-color: var(--color-bright-orange);
+}
+.source-code {
+  width: 8rem;
+  background: var(--color-dark-green);
+  color: var(--color-main-white);
+}
 /* Skills Section */
 
 #skills {

@@ -195,6 +195,7 @@ const flyInObserver = new IntersectionObserver(
 const greeting = document.querySelector('.greeting');
 const aboutMeText = document.querySelector('.about-me-text');
 const aboutMeImg = document.querySelector('.about-me-img');
+const projectImgs = document.querySelectorAll('.project-img');
 
 flyInObserver.observe(skillsCard);
 flyInObserver.observe(worksCard);
@@ -202,3 +203,6 @@ flyInObserver.observe(aboutMeCard);
 flyInObserver.observe(greeting);
 flyInObserver.observe(aboutMeText);
 flyInObserver.observe(aboutMeImg);
+projectImgs.forEach((img) => {
+  flyInObserver.observe(img);
+});
