@@ -597,6 +597,9 @@ html {
   gap: 2.5rem;
   align-items: center;
 }
+.fa-arrow-up-right-from-square {
+  padding-inline-start: 0.625rem;
+}
 
 .project {
   aspect-ratio: 2 / 1;
@@ -608,22 +611,13 @@ html {
   justify-content: center;
   place-items: center;
 }
-@media (max-width: 60rem) {
-  .project {
-    flex-direction: column;
-  }
-}
-.fa-arrow-up-right-from-square {
-  padding-inline-start: 0.625rem;
-}
 .project-information {
   display: flex;
   width: 50%;
   flex-direction: column;
-  gap: 1.25rem;
-  padding-inline-start: 2.5rem;
+  gap: 1rem;
+  padding: 2rem;
 }
-
 .project-img-container {
   display: flex;
   justify-content: center;
@@ -632,7 +626,6 @@ html {
   width: 50%;
   height: 100%;
 }
-
 .project-img {
   width: 90%;
   opacity: 0;
@@ -652,7 +645,7 @@ html {
 }
 .project-text {
   font-size: clamp(1rem, 0.92rem + 0.42vw, 1.25rem);
-  padding-block-end: 1.25rem;
+  padding-block-end: 1rem;
   line-height: 1.5;
 }
 .project-btn-container {
@@ -671,6 +664,25 @@ html {
   width: 8rem;
   background: var(--color-dark-green);
   color: var(--color-main-white);
+}
+
+@media (max-width: 60rem) {
+  .project {
+    flex-direction: column;
+    aspect-ratio: 2 / 3;
+  }
+  .project-information {
+    height: 40%;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    place-items: center;
+    gap: 0;
+  }
+  .project-img-container {
+    width: 100%;
+    height: 60%;
+  }
 }
 /* Skills Section */
 
@@ -775,8 +787,8 @@ html {
 .about-me-img {
   opacity: 0;
   transform: translateY(2rem);
-  transition: transform 250ms var(--ani-timing-bezier) 250ms,
-    opacity 250ms var(--ani-timing-bezier) 250ms;
+  transition: transform 250ms var(--ani-timing-bezier) 100ms,
+    opacity 250ms var(--ani-timing-bezier) 100ms;
 }
 .about-me-img.show {
   opacity: 1;
