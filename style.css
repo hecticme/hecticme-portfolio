@@ -312,7 +312,7 @@ html {
   transform: translate(4%, 0) rotate(10deg);
 }
 .works-card > .shape:nth-child(3) {
-  background-color: var(--color-light-pink);
+  background-color: var(--color-dark-yellow);
   z-index: 2;
   transform: translate(26%, 0) rotate(20deg);
 }
@@ -622,9 +622,17 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--color-bright-orange);
   width: 50%;
   height: 100%;
+}
+.project-img-container.bright-orange {
+  background-color: var(--color-bright-orange);
+}
+.project-img-container.dark-green {
+  background-color: var(--color-dark-green);
+}
+.project-img-container.dark-yellow {
+  background-color: var(--color-dark-yellow);
 }
 .project-img {
   width: 90%;
