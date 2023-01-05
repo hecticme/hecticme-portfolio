@@ -200,6 +200,7 @@ html {
 /* Navigation Cards */
 .left-nav {
   font-family: var(--font-header);
+  font-weight: var(--fw-regular);
   opacity: 0;
   pointer-events: none;
   left: -5rem;
@@ -238,6 +239,7 @@ html {
 
 .card-text {
   font-family: var(--font-header);
+  font-weight: var(--fw-regular);
   font-size: clamp(1rem, 0.92rem + 0.42vw, 1.25rem);
   color: var(--color-main-black);
   position: absolute;
@@ -649,6 +651,7 @@ html {
 
 .project-name {
   font-family: var(--font-header);
+  font-weight: var(--fw-regular);
   font-size: clamp(1.25rem, 1.042rem + 1.042vw, 1.875rem);
   line-height: 1.5;
 }
@@ -837,6 +840,7 @@ html {
 }
 .about-me-text h3 {
   font-family: var(--font-header);
+  font-weight: var(--fw-regular);
   font-size: clamp(1.25rem, 1.042rem + 1.042vw, 1.875rem);
   margin-block-end: 0.625rem;
   line-height: 1.5;
