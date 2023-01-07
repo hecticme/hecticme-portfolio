@@ -613,6 +613,10 @@ html {
   justify-content: center;
   place-items: center;
 }
+/* Swap the even-number project */
+.project:nth-child(2n) > .project-information {
+  order: 2;
+}
 .project-information {
   display: flex;
   width: 50%;
@@ -700,6 +704,8 @@ html {
     text-align: center;
     justify-content: center;
     place-items: center;
+    /* Reset order when screen get smaller */
+    order: 1;
   }
   .project-img-container {
     width: 100%;
