@@ -158,6 +158,38 @@ overlay.addEventListener('click', () => {
 const aboutMeSection = document.querySelector('#about-me');
 const aboutMeEye = document.querySelector('.about-me-img #eye');
 const aboutMeEyeBall = document.querySelector('.about-me-img #eye-ball');
+
+const aboutMeNav = document.querySelector('[href="#about-me"]');
+const skillsNav = document.querySelector('[href="#skills"]');
+const worksNav = document.querySelector('[href="#works"]');
+const homeNav = document.querySelector('[href="#"]');
+const aboutMeContact = document.querySelector(
+  'span[data-modal-target="#contact-form"]'
+);
+const mRect = document.querySelector('.about-me-img #m-rect');
+const nRect = document.querySelector('.about-me-img #n-rect');
+const hRect = document.querySelector('.about-me-img #h-rect');
+const expandArr = [
+  aboutMeNav,
+  skillsNav,
+  worksNav,
+  homeNav,
+  aboutMeContact,
+  mRect,
+  nRect,
+  hRect,
+];
+
+// Iris expands on hover
+expandArr.forEach((element) => {
+  element.onmouseover = () => {
+    aboutMeEyeBall.classList.add('expands');
+  };
+  element.onmouseout = () => {
+    aboutMeEyeBall.classList.remove('expands');
+  };
+});
+
 // Eye-ball follows cursor
 aboutMeSection.onmousemove = (e) => {
   const [moveX, moveY] = getMousePosition(e, aboutMeEye);

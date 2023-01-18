@@ -816,6 +816,12 @@ html {
   opacity: 1;
   transform: translateY(0);
 }
+.about-me-img #eye-ball {
+  transition: r 200ms var(--ani-timing-bezier);
+}
+.about-me-img #eye-ball.expands {
+  r: 16;
+}
 @media (max-width: 65.3125rem) {
   .about-me-layout {
     flex-direction: column;
