@@ -154,11 +154,11 @@ overlay.addEventListener('click', () => {
 });
 // End of Open and close contact me form
 
-// About me section eye following logic
+// About me section eye-ball
 const aboutMeSection = document.querySelector('#about-me');
 const aboutMeEye = document.querySelector('.about-me-img #eye');
 const aboutMeEyeBall = document.querySelector('.about-me-img #eye-ball');
-
+// Eye-ball follows cursor
 aboutMeSection.onmousemove = (e) => {
   const [moveX, moveY] = getMousePosition(e, aboutMeEye);
   const panX = 0.02 * moveX;
@@ -169,13 +169,13 @@ aboutMeSection.onmousemove = (e) => {
       transform: `translate(${panX}px, ${panY}px)`,
     },
     {
-      duration: 100,
+      duration: 10,
       easing: 'ease-in-out',
       fill: 'forwards',
     }
   );
 };
-// End of About me section eye following logic
+// End of About me section eye-ball logic
 
 // Fly-in animation
 const flyInObserver = new IntersectionObserver(
@@ -206,3 +206,4 @@ flyInObserver.observe(aboutMeImg);
 projectImgs.forEach((img) => {
   flyInObserver.observe(img);
 });
+// End of Fly-in animation

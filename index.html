@@ -391,13 +391,33 @@
                 ry="25.5"
                 fill="#0B3F30"
               />
-              <circle
-                id="eye-ball"
-                cx="329.5"
-                cy="66.5"
-                r="11.5"
-                fill="#ED572B"
-              />
+              <mask
+                id="mask0_190_15"
+                style="mask-type: alpha"
+                maskUnits="userSpaceOnUse"
+                x="288"
+                y="41"
+                width="83"
+                height="51"
+              >
+                <ellipse
+                  id="eye-mask"
+                  cx="329.5"
+                  cy="66.5"
+                  rx="41.5"
+                  ry="25.5"
+                  fill="#0B3F30"
+                />
+              </mask>
+              <g mask="url(#mask0_190_15)">
+                <circle
+                  id="eye-ball"
+                  cx="329.5"
+                  cy="66.5"
+                  r="11.5"
+                  fill="#ED572B"
+                />
+              </g>
             </g>
           </svg>
         </div>
