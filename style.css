@@ -70,9 +70,9 @@ body {
 .btn:hover::after {
   transform: translate(-50%, 0.625rem) scale(1);
 }
+/* End of Global */
 
 /* Reset */
-
 html {
   box-sizing: border-box;
   scroll-behavior: smooth;
@@ -88,9 +88,9 @@ html {
   padding: 0;
   margin: 0;
 }
+/* End of Reset */
 
-/* Navbar Style */
-
+/* Navbar */
 .navbar {
   width: min(80rem, 100% - 5rem);
   margin-inline: auto;
@@ -126,8 +126,9 @@ html {
 .fa-linkedin::before {
   height: 1.625rem;
 }
+/* End of Navbar */
 
-/* Intro section */
+/* Intro Section */
 .intro {
   margin-block-end: 18.75rem;
   display: flex;
@@ -580,8 +581,7 @@ html {
   top: 55%;
   left: 72.5%;
 }
-
-/* Hover State Card */
+/* End of Intro Section */
 
 /* Works Section */
 #works {
@@ -787,12 +787,6 @@ html {
 }
 .skills-layout .logo img.show {
   transform: scale(0);
-}
-.skills-text {
-  margin-inline: auto;
-  margin-block-start: 2.5rem;
-  text-align: center;
-  font-size: clamp(1rem, 0.92rem + 0.42vw, 1.25rem);
 }
 
 /* About Me Section */
