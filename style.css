@@ -599,10 +599,6 @@ html {
   gap: 5rem;
   align-items: center;
 }
-.fa-arrow-up-right-from-square {
-  padding-inline-start: 0.625rem;
-}
-
 .project {
   aspect-ratio: 2 / 1;
   width: clamp(16.25rem, 1rem + 76.25vw, 62rem);
@@ -656,13 +652,11 @@ html {
 
 .project-name {
   font-family: var(--font-header);
-  font-weight: var(--fw-regular);
   font-size: clamp(1.25rem, 1.042rem + 1.042vw, 1.875rem);
   line-height: 1.5;
 }
 .project-text {
   font-size: clamp(1rem, 0.92rem + 0.42vw, 1.25rem);
-  padding-block-end: 0.625rem;
   line-height: 1.5;
 }
 .project-tool-list {
@@ -675,22 +669,30 @@ html {
   padding: 0.4rem;
   border: 1px solid var(--color-dark-green);
   border-radius: 5px;
+  font-size: 0.9rem;
 }
 .project-btn-container {
   display: flex;
   gap: 0.625rem;
+  padding-block-start: 1.25rem;
 }
 .live-page,
 .source-code {
   height: 3rem;
-  width: 7.2rem;
+  font-size: clamp(0.8rem, 0.7333333333333334rem + 0.33333333333333326vw, 1rem);
+}
+.fa-arrow-up-right-from-square {
+  padding-inline-start: 0.625rem;
+  font-size: 0.8rem;
 }
 .live-page {
   background-color: var(--color-bright-orange);
+  width: clamp(6.5rem, 6.166666666666667rem + 1.6666666666666667vw, 7.5rem);
 }
 .source-code {
   background: var(--color-dark-green);
   color: var(--color-main-white);
+  width: clamp(7.5rem, 7rem + 2.5vw, 9rem);
 }
 
 @media (max-width: 60rem) {
