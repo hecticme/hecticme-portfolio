@@ -849,7 +849,6 @@ html {
 }
 .about-me-text h3 {
   font-family: var(--font-header);
-  font-weight: var(--fw-regular);
   font-size: clamp(1.25rem, 1.042rem + 1.042vw, 1.875rem);
   margin-block-end: 0.625rem;
   line-height: 1.5;
