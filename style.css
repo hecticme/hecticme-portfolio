@@ -615,7 +615,7 @@ html {
 }
 .project:hover {
   cursor: pointer;
-  box-shadow: hsla(163, 70%, 15%, 15%) 0px 20px 50px 0px;
+  box-shadow: hsla(163, 70%, 15%, 20%) 0px 20px 50px 0px;
   transform: translateY(-0.625rem);
 }
 /* Swap the position of even-number projects */

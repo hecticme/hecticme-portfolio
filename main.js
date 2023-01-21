@@ -17,7 +17,7 @@ aboutMeCard.addEventListener('click', () => {
 });
 // End of Card Navigation
 
-// Fly-in animation for left-nav
+// Observe fly-in animation for left-nav
 const observeOptions = {
   rootMargin: '100px 0px 0px 0px',
 };
@@ -33,7 +33,7 @@ const leftNavObserver = new IntersectionObserver((entries) => {
   });
 }, observeOptions);
 leftNavObserver.observe(intro);
-// End of Fly-in animation for left-nav
+// End of Observe fly-in animation for left-nav
 
 // Skill cards logic
 const eye = document.querySelector('.eye');
@@ -209,7 +209,7 @@ aboutMeSection.onmousemove = (e) => {
 };
 // End of About me section eye-ball logic
 
-// Fly-in animation
+// Observe fly-in animation
 const flyInObserver = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
@@ -238,4 +238,4 @@ flyInObserver.observe(aboutMeImg);
 projectImgs.forEach((img) => {
   flyInObserver.observe(img);
 });
-// End of Fly-in animation
+// End of Observe fly-in animation
