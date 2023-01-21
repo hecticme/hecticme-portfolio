@@ -661,7 +661,7 @@ html {
 }
 .project-tool-list {
   display: flex;
-  gap: 0.625rem;
+  gap: 0.4rem;
 }
 .project-tool-list > li {
   font-weight: var(--fw-regular);
