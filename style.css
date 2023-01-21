@@ -611,7 +611,7 @@ html {
   display: flex;
   justify-content: center;
   place-items: center;
-  transition: box-shadow 250ms ease-in-out, transform 500ms ease-in-out;
+  transition: box-shadow 500ms ease-in-out, transform 500ms ease-in-out;
 }
 .project:hover {
   cursor: pointer;
