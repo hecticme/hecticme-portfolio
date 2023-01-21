@@ -65,7 +65,7 @@ body {
 }
 .btn:hover {
   transform: translateY(-10%);
-  box-shadow: hsla(163, 70%, 15%, 0.15) 0px 20px 100px 0px;
+  box-shadow: hsla(163, 70%, 15%, 0.25) 0px 20px 100px 0px;
 }
 .btn:hover::after {
   transform: translate(-50%, 0.625rem) scale(1);
