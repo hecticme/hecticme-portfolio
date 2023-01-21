@@ -602,6 +602,7 @@ html {
 .fa-arrow-up-right-from-square {
   padding-inline-start: 0.625rem;
 }
+
 .project {
   aspect-ratio: 2 / 1;
   width: clamp(16.25rem, 1rem + 76.25vw, 62rem);
@@ -611,13 +612,8 @@ html {
   display: flex;
   justify-content: center;
   place-items: center;
-  transition: box-shadow 500ms ease-in-out, transform 500ms ease-in-out;
 }
-.project:hover {
-  cursor: pointer;
-  box-shadow: hsla(163, 70%, 15%, 20%) 0px 20px 50px 0px;
-  transform: translateY(-0.625rem);
-}
+
 /* Swap the position of even-number projects */
 .project:nth-child(2n) > .project-information {
   order: 2;
