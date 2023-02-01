@@ -1,34 +1,34 @@
 // Card Navigation
-const skillsCard = document.querySelector('.skills-card');
-const worksCard = document.querySelector('.works-card');
-const aboutMeCard = document.querySelector('.about-me-card');
-const skillsCardLink = document.querySelector('.skills-card .card-text');
-const worksCardLink = document.querySelector('.works-card .card-text');
-const aboutMeCardLink = document.querySelector('.about-me-card .card-text');
+const skillsCard = document.querySelector(".skills-card");
+const worksCard = document.querySelector(".works-card");
+const aboutMeCard = document.querySelector(".about-me-card");
+const skillsCardLink = document.querySelector(".skills-card .card-text");
+const worksCardLink = document.querySelector(".works-card .card-text");
+const aboutMeCardLink = document.querySelector(".about-me-card .card-text");
 
-skillsCard.addEventListener('click', () => {
+skillsCard.addEventListener("click", () => {
   skillsCardLink.click();
 });
-worksCard.addEventListener('click', () => {
+worksCard.addEventListener("click", () => {
   worksCardLink.click();
 });
-aboutMeCard.addEventListener('click', () => {
+aboutMeCard.addEventListener("click", () => {
   aboutMeCardLink.click();
 });
 // End of Card Navigation
 
 // Observe fly-in animation for left-nav
 const observeOptions = {
-  rootMargin: '100px 0px 0px 0px',
+  rootMargin: "100px 0px 0px 0px",
 };
-const leftNav = document.querySelector('.left-nav');
-const intro = document.querySelector('.intro');
+const leftNav = document.querySelector(".left-nav");
+const intro = document.querySelector(".intro");
 const leftNavObserver = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (!entry.isIntersecting) {
-      leftNav.classList.add('show');
+      leftNav.classList.add("show");
     } else {
-      leftNav.classList.remove('show');
+      leftNav.classList.remove("show");
     }
   });
 }, observeOptions);
@@ -36,8 +36,8 @@ leftNavObserver.observe(intro);
 // End of Observe fly-in animation for left-nav
 
 // Skill cards logic
-const eye = document.querySelector('.eye');
-const eyeBall = document.querySelector('.eye-ball');
+const eye = document.querySelector(".eye");
+const eyeBall = document.querySelector(".eye-ball");
 // Eyes follow cursor logic
 const getMousePosition = (event, target) => {
   const result = [];
@@ -54,16 +54,15 @@ const getMousePosition = (event, target) => {
 
 skillsCard.onmousemove = (e) => {
   const [moveX, moveY] = getMousePosition(e, skillsCard);
-  const panX = 0.1 * moveX;
-  const panY = 0.1 * moveY;
+  const [panX, panY] = [0.1 * moveX, 0.1 * moveY];
   eyeBall.animate(
     {
       transform: `translate(${-50 + panX}%, ${-50 + panY}%)`,
     },
     {
       duration: 750,
-      fill: 'forwards',
-      easing: 'ease-in-out',
+      fill: "forwards",
+      easing: "ease-in-out",
     }
   );
   eye.animate(
@@ -72,8 +71,8 @@ skillsCard.onmousemove = (e) => {
     },
     {
       duration: 750,
-      fill: 'forwards',
-      easing: 'ease-in-out',
+      fill: "forwards",
+      easing: "ease-in-out",
       delay: 250,
     }
   );
@@ -86,8 +85,8 @@ skillsCard.onmouseout = () => {
     },
     {
       duration: 750,
-      fill: 'forwards',
-      easing: 'ease',
+      fill: "forwards",
+      easing: "ease",
     }
   );
   eye.animate(
@@ -96,68 +95,192 @@ skillsCard.onmouseout = () => {
     },
     {
       duration: 750,
-      fill: 'forwards',
-      easing: 'ease',
+      fill: "forwards",
+      easing: "ease",
       delay: 250,
     }
   );
 };
 // End of Skill cards logic
 
-// Logo layout show name on hover
-const logos = document.querySelectorAll('.logo');
+// -- Skills layout follow cursor
+const skillsLayout = document.querySelector(".skills-layout");
+const skillsSection = document.querySelector("#skills");
+const logoLayout1 = document.querySelector("#logo-layout-1");
+const logoLayout2 = document.querySelector("#logo-layout-2");
+const logoLayout3 = document.querySelector("#logo-layout-3");
+const logoLayout4 = document.querySelector("#logo-layout-4");
+const logoLayout5 = document.querySelector("#logo-layout-5");
+const logoLayoutArr = [
+  logoLayout1,
+  logoLayout2,
+  logoLayout3,
+  logoLayout4,
+  logoLayout5,
+];
+
+skillsSection.addEventListener("mousemove", (e) => {
+  const [moveX, moveY] = getMousePosition(e, skillsSection);
+  const [panX, panY] = [0.05 * moveX, 0.05 * moveY];
+
+  let delay1;
+  let delay2;
+  let delay3;
+  let delay4;
+
+  if (panX <= 0) {
+    delay1 = 0;
+    delay2 = 100;
+    delay3 = 300;
+    delay4 = 400;
+  } else {
+    delay1 = 400;
+    delay2 = 300;
+    delay3 = 100;
+    delay4 = 0;
+  }
+  const mediaQuery = window.matchMedia("(max-width: 800px)");
+  if (mediaQuery.matches) {
+    if (panY >= 0) {
+      delay1 = 0;
+      delay2 = 100;
+      delay3 = 300;
+      delay4 = 400;
+    } else {
+      delay1 = 400;
+      delay2 = 300;
+      delay3 = 100;
+      delay4 = 0;
+    }
+  }
+  logoLayout1.animate(
+    {
+      transform: `translate(${panX}px, ${panY}px)`,
+    },
+    {
+      duration: 500,
+      fill: "forwards",
+      easing: "ease-in-out",
+      delay: delay1,
+    }
+  );
+  logoLayout2.animate(
+    {
+      transform: `translate(${panX}px, ${panY}px)`,
+    },
+    {
+      duration: 500,
+      fill: "forwards",
+      easing: "ease-in-out",
+      delay: delay2,
+    }
+  );
+  logoLayout3.animate(
+    {
+      transform: `translate(${panX}px, ${panY}px)`,
+    },
+    {
+      duration: 500,
+      fill: "forwards",
+      easing: "ease-in-out",
+      delay: 200,
+    }
+  );
+  logoLayout4.animate(
+    {
+      transform: `translate(${panX}px, ${panY}px)`,
+    },
+    {
+      duration: 500,
+      fill: "forwards",
+      easing: "ease-in-out",
+      delay: delay3,
+    }
+  );
+  logoLayout5.animate(
+    {
+      transform: `translate(${panX}px, ${panY}px)`,
+    },
+    {
+      duration: 500,
+      fill: "forwards",
+      easing: "ease-in-out",
+      delay: delay4,
+    }
+  );
+});
+
+skillsSection.addEventListener("mouseout", () => {
+  logoLayoutArr.forEach((logo) => {
+    logo.animate(
+      {
+        transform: `translate(0px, 0px)`,
+      },
+      {
+        duration: 500,
+        fill: "forwards",
+        easing: "ease-in-out",
+      }
+    );
+  });
+});
+
+// -- End of Skills layout follow cursor
+
+// -- Skills layout show name on hover
+const logos = document.querySelectorAll(".logo");
 logos.forEach((logo) => {
-  logo.addEventListener('mouseover', () => {
+  logo.addEventListener("mouseover", () => {
     const img = document.querySelector(`#logo-img-${logo.dataset.logoTarget}`);
     const text = document.querySelector(
       `#logo-text-${logo.dataset.logoTarget}`
     );
-    img.classList.add('show');
-    text.classList.add('show');
+    img.classList.add("show");
+    text.classList.add("show");
   });
 });
 logos.forEach((logo) => {
-  logo.addEventListener('mouseout', () => {
+  logo.addEventListener("mouseout", () => {
     const img = document.querySelector(`#logo-img-${logo.dataset.logoTarget}`);
     const text = document.querySelector(
       `#logo-text-${logo.dataset.logoTarget}`
     );
-    img.classList.remove('show');
-    text.classList.remove('show');
+    img.classList.remove("show");
+    text.classList.remove("show");
   });
 });
-// End of Logo layout show name on hover
+// -- End of Skills layout show name on hover
 
 // Open and close contact me form
 const openContactBtn = document.querySelectorAll(
   '[data-modal-target="#contact-form"]'
 );
-const closeContactBtn = document.querySelectorAll('[data-close-btn]');
-const overlay = document.querySelector('.overlay');
-const contactForm = document.querySelector('#contact-form');
+const closeContactBtn = document.querySelectorAll("[data-close-btn]");
+const overlay = document.querySelector(".overlay");
+const contactForm = document.querySelector("#contact-form");
 
 openContactBtn.forEach((btn) => {
-  btn.addEventListener('click', () => {
-    contactForm.classList.add('show');
-    overlay.classList.add('show');
+  btn.addEventListener("click", () => {
+    contactForm.classList.add("show");
+    overlay.classList.add("show");
   });
 });
 closeContactBtn.forEach((btn) => {
-  btn.addEventListener('click', () => {
-    contactForm.classList.remove('show');
-    overlay.classList.remove('show');
+  btn.addEventListener("click", () => {
+    contactForm.classList.remove("show");
+    overlay.classList.remove("show");
   });
 });
-overlay.addEventListener('click', () => {
-  contactForm.classList.remove('show');
-  overlay.classList.remove('show');
+overlay.addEventListener("click", () => {
+  contactForm.classList.remove("show");
+  overlay.classList.remove("show");
 });
 // End of Open and close contact me form
 
 // About me section eye-ball
-const aboutMeSection = document.querySelector('#about-me');
-const aboutMeEye = document.querySelector('.about-me-img #eye');
-const aboutMeEyeBall = document.querySelector('.about-me-img #eye-ball');
+const aboutMeSection = document.querySelector("#about-me");
+const aboutMeEye = document.querySelector(".about-me-img #eye");
+const aboutMeEyeBall = document.querySelector(".about-me-img #eye-ball");
 
 const aboutMeNav = document.querySelector('[href="#about-me"]');
 const skillsNav = document.querySelector('[href="#skills"]');
@@ -166,9 +289,9 @@ const homeNav = document.querySelector('[href="#"]');
 const aboutMeContact = document.querySelector(
   'span[data-modal-target="#contact-form"]'
 );
-const mRect = document.querySelector('.about-me-img #m-rect');
-const nRect = document.querySelector('.about-me-img #n-rect');
-const hRect = document.querySelector('.about-me-img #h-rect');
+const mRect = document.querySelector(".about-me-img #m-rect");
+const nRect = document.querySelector(".about-me-img #n-rect");
+const hRect = document.querySelector(".about-me-img #h-rect");
 const expandArr = [
   aboutMeNav,
   skillsNav,
@@ -183,10 +306,10 @@ const expandArr = [
 // Iris expands on hover
 expandArr.forEach((element) => {
   element.onmouseover = () => {
-    aboutMeEyeBall.classList.add('expands');
+    aboutMeEyeBall.classList.add("expands");
   };
   element.onmouseout = () => {
-    aboutMeEyeBall.classList.remove('expands');
+    aboutMeEyeBall.classList.remove("expands");
   };
 });
 
@@ -202,8 +325,8 @@ aboutMeSection.onmousemove = (e) => {
     },
     {
       duration: 10,
-      easing: 'ease-in-out',
-      fill: 'forwards',
+      easing: "ease-in-out",
+      fill: "forwards",
     }
   );
 };
@@ -214,7 +337,7 @@ const flyInObserver = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('show');
+        entry.target.classList.add("show");
         flyInObserver.unobserve(entry.target);
       }
     });
@@ -224,10 +347,10 @@ const flyInObserver = new IntersectionObserver(
   }
 );
 
-const greeting = document.querySelector('.greeting');
-const aboutMeText = document.querySelector('.about-me-text');
-const aboutMeImg = document.querySelector('.about-me-img');
-const projectImgs = document.querySelectorAll('.project-img');
+const greeting = document.querySelector(".greeting");
+const aboutMeText = document.querySelector(".about-me-text");
+const aboutMeImg = document.querySelector(".about-me-img");
+const projectImgs = document.querySelectorAll(".project-img");
 
 flyInObserver.observe(skillsCard);
 flyInObserver.observe(worksCard);

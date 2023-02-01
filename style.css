@@ -169,7 +169,7 @@ body {
   align-items: flex-end;
 }
 
-@media (max-width: 65.3125rem) {
+@media (max-width: 65.3125em) {
   .intro {
     flex-wrap: wrap;
     justify-content: center;
@@ -725,7 +725,7 @@ body {
   width: clamp(7.5rem, 7rem + 2.5vw, 9rem);
 }
 
-@media (max-width: 60rem) {
+@media (max-width: 60em) {
   .project {
     flex-direction: column;
     aspect-ratio: 2 / 3;
@@ -775,7 +775,7 @@ body {
   flex-direction: column;
   row-gap: clamp(0.4rem, 0.2rem + 1vw, 1rem);
 }
-@media (max-width: 50rem) {
+@media (max-width: 50em) {
   .skills-layout {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(5, 1fr);
@@ -786,8 +786,11 @@ body {
     row-gap: 0;
   }
 }
-
+#skills:hover .logo {
+  box-shadow: hsl(163, 70%, 15%, 15%) 0px 48px 100px 0px;
+}
 .skills-layout .logo {
+  transition: box-shadow 500ms var(--ani-timing-bezier);
   background-color: var(--color-main-white);
   position: relative;
   display: flex;
@@ -859,7 +862,7 @@ body {
   r: 16;
   /* transform: scale(10, 10); */
 }
-@media (max-width: 65.3125rem) {
+@media (max-width: 65.3125em) {
   .about-me-layout {
     flex-direction: column;
     gap: 2.5rem;
