@@ -75,6 +75,7 @@ body {
 /* Reset */
 html {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 *,
@@ -95,20 +96,12 @@ a:visited {
   text-decoration: none;
 }
 
-html:focus-within {
-  scroll-behavior: smooth;
-}
-
 html,
 body {
   height: 100%;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html:focus-within {
-    scroll-behavior: auto;
-  }
-
   *,
   *::before,
   *::after {
