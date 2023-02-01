@@ -1,7 +1,7 @@
 /* Global */
 :root {
-  --font-header: 'Playfair Display', serif;
-  --font-text: 'Josefin Sans', sans-serif;
+  --font-header: "Playfair Display", serif;
+  --font-text: "Josefin Sans", sans-serif;
   --fw-semibold: 600;
   --fw-regular: 400;
   --fw-light: 300;
@@ -54,7 +54,7 @@ body {
   transition: transform 250ms ease-in-out, box-shadow 250ms ease-in-out;
 }
 .btn::after {
-  content: '';
+  content: "";
   width: 30%;
   border-bottom: 3px solid var(--color-bright-orange);
   position: absolute;
@@ -75,18 +75,48 @@ body {
 /* Reset */
 html {
   box-sizing: border-box;
-  scroll-behavior: smooth;
 }
 
 *,
-*::before,
-*::after {
+*::after,
+*::before {
   box-sizing: inherit;
 }
 
 * {
-  padding: 0;
   margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+a,
+a:active,
+a:visited {
+  text-decoration: none;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 /* End of Reset */
 
@@ -820,10 +850,14 @@ html {
   transform: translateY(0);
 }
 .about-me-img #eye-ball {
+  /* transition-property: r, transform;
+  transition-duration: 200ms;
+  transition-timing-function: var(--ani-timing-bezier); */
   transition: r 200ms var(--ani-timing-bezier);
 }
 .about-me-img #eye-ball.expands {
   r: 16;
+  /* transform: scale(10, 10); */
 }
 @media (max-width: 65.3125rem) {
   .about-me-layout {
