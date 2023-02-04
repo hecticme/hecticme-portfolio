@@ -6,7 +6,7 @@
   --fw-regular: 400;
   --fw-light: 300;
 
-  --color-main-black: hsl(0, 0%, 8%);
+  --color-main-black: hsl(0, 0%, 15%);
   --color-main-white: hsl(0, 0%, 100%);
   --color-light-brown: hsl(34, 61%, 83%);
   --color-background: hsl(30, 36%, 95%);
@@ -14,6 +14,14 @@
   --color-dark-green: hsl(163, 70%, 15%);
   --color-bright-orange: hsl(14, 84%, 55%);
   --color-dark-yellow: hsl(36, 77%, 53%);
+
+  /* Color for Dark mode */
+
+  --color-lighter-green: hsl(163, 68%, 18%);
+  --color-darker-brown: hsl(34, 73%, 70%);
+  --color-darker-pink: hsl(23, 58%, 60%);
+  --color-darker-orange: hsl(14, 78%, 48%);
+  --color-dark-background: hsl(0, 9%, 20%);
 
   --ani-timing-bezier: cubic-bezier(0.18, 0.68, 0.63, 0.94);
 }
@@ -134,7 +142,6 @@ body {
   font-family: var(--font-header);
   font-weight: var(--fw-semibold);
   font-size: 1.5rem;
-  color: var(--color-main-black);
   margin-inline-end: auto;
 }
 
@@ -146,7 +153,6 @@ body {
 }
 .social-link {
   transition: transform 100ms ease-in-out;
-  color: var(--color-main-black);
 }
 .social-link:hover {
   color: var(--color-light-brown);
@@ -250,7 +256,6 @@ body {
 }
 .left-nav > a {
   font-size: clamp(0.875rem, 0.84rem + 0.2084vw, 1rem);
-  color: var(--color-main-black);
   margin-inline-end: 0.625rem;
 }
 .left-nav > a:hover {
@@ -539,6 +544,7 @@ body {
   transition-property: top, left, height, transform;
   transition-duration: 250ms;
   transition-timing-function: var(--ani-timing-bezier);
+  color: var(--color-main-black);
 }
 .about-me-card > .shape:nth-child(1) {
   background-color: var(--color-dark-green);
@@ -635,7 +641,8 @@ body {
   width: clamp(16.25rem, 1rem + 76.25vw, 62rem);
   border-radius: 10px;
   overflow: hidden;
-  background-color: var(--color-light-brown);
+  background-color: var(--color-darker-brown);
+  color: var(--color-main-black);
   display: flex;
   justify-content: center;
   place-items: center;
@@ -683,6 +690,7 @@ body {
 
 .project-name {
   font-family: var(--font-header);
+  font-weight: var(--fw-semibold);
   font-size: clamp(1.25rem, 1.042rem + 1.042vw, 1.875rem);
   line-height: 1.5;
 }
@@ -815,7 +823,6 @@ body {
   font-size: clamp(0.8rem, 0.65rem + 0.75vw, 1.25rem);
   font-family: var(--font-text);
   font-weight: var(--fw-regular);
-  color: var(--color-main-black);
   transform: scale(0);
   transition: transform 250ms ease-in-out;
 }
@@ -842,6 +849,27 @@ body {
 .about-me-img > svg {
   width: clamp(17.5rem, 14.375rem + 15.625vw, 26.875rem);
   aspect-ratio: 430 / 482;
+}
+.about-me-img > svg #m-rect {
+  fill: var(--color-bright-orange);
+}
+.about-me-img > svg #n-rect {
+  fill: var(--color-light-pink);
+}
+.about-me-img > svg #i-rect {
+  fill: var(--color-light-brown);
+}
+.about-me-img > svg #h-rect {
+  fill: var(--color-dark-yellow);
+}
+.about-me-img > svg #dot-ellipse {
+  fill: var(--color-dark-green);
+}
+.about-me-img > svg #eye {
+  fill: var(--color-dark-green);
+}
+.about-me-img > svg #eye-ball {
+  fill: var(--color-bright-orange);
 }
 .about-me-img {
   opacity: 0;
@@ -926,6 +954,7 @@ body {
   display: flex;
   justify-content: center;
   place-items: center;
+  color: var(--color-main-black);
   background-color: var(--color-light-brown);
   width: clamp(18.75rem, 11.875rem + 34.375vw, 39.375rem);
   height: 35rem;
@@ -998,3 +1027,95 @@ textarea {
   width: 10rem;
 }
 /* End of Contact form */
+
+/* Dark scheme */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: var(--color-main-black);
+    color: var(--color-main-white);
+  }
+
+  a {
+    color: var(--color--main-white);
+  }
+
+  .title-line {
+    border-bottom: 2px solid var(--color-main-white);
+  }
+  .resume-btn:hover,
+  .contact-me-btn:hover {
+    box-shadow: hsla(164, 19%, 85%, 0.25) 0px 20px 100px 0px;
+  }
+  .resume-btn {
+    background-color: var(--color-lighter-green);
+  }
+  .works-card {
+    background-color: var(--color-darker-brown);
+  }
+  .skills-card {
+    background-color: var(--color-darker-pink);
+  }
+  .about-me-card {
+    background-color: var(--color-darker-orange);
+  }
+  #works {
+    background-color: var(--color-dark-background);
+  }
+  .project-img-container.bright-orange {
+    background-color: var(--color-darker-orange);
+  }
+  .project-img-container.dark-green {
+    background-color: var(--color-lighter-green);
+  }
+  .project-img-container.dark-yellow {
+    background-color: var(--color-dark-yellow);
+  }
+  #skills:hover .logo {
+    box-shadow: hsla(0, 0%, 100%, 0.2) 0px 48px 100px 0px;
+  }
+  .skills-layout .logo {
+    background-color: var(--color-dark-background);
+  }
+  #about-me {
+    background-color: var(--color-dark-background);
+  }
+  .about-me-text span[data-modal-target]:hover {
+    color: var(--color-lighter-green);
+  }
+
+  .about-me-img > svg #m-rect {
+    fill: var(--color-darker-orange);
+  }
+  .about-me-img > svg #n-rect {
+    fill: var(--color-darker-pink);
+  }
+  .about-me-img > svg #i-rect {
+    fill: var(--color-darker-brown);
+  }
+  .about-me-img > svg #h-rect {
+    fill: var(--color-dark-yellow);
+  }
+  .about-me-img > svg #dot-ellipse {
+    fill: var(--color-lighter-green);
+  }
+  .about-me-img > svg #eye {
+    fill: var(--color-dark-green);
+  }
+  .about-me-img > svg #eye-ball {
+    fill: var(--color-bright-orange);
+  }
+
+  #contact-form {
+    background-color: var(--color-darker-brown);
+  }
+
+  .close-btn:hover {
+    background-color: var(--color-darker-orange);
+  }
+
+  .contact-form-inputs > input,
+  .contact-form-inputs > textarea {
+    background-color: var(--color-dark-background);
+    color: var(--color-main-white);
+  }
+}
