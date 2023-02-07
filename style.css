@@ -10,7 +10,7 @@
   --color-main-black: hsl(0, 0%, 15%);
   --color-main-white: hsl(0, 0%, 100%);
   --color-light-brown: hsl(34, 61%, 83%);
-  --color-light-background: hsl(30, 36%, 95%);
+  --color-light-background: hsl(24, 33%, 97%);
   --color-light-pink: hsl(23, 75%, 78%);
   --color-light-green: hsl(163, 70%, 15%);
   --color-light-orange: hsl(14, 84%, 55%);
@@ -634,11 +634,11 @@ body {
   width: clamp(16.25rem, 1rem + 76.25vw, 62rem);
   border-radius: 10px;
   overflow: hidden;
-  background-color: var(--color-light-brown);
-  color: var(--color-main-black);
+  background-color: var(--color-main-white);
   display: flex;
   justify-content: center;
   place-items: center;
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 40px 96px 0px;
 }
 
 /* Swap the position of even-number projects */
@@ -700,7 +700,7 @@ body {
   font-weight: var(--fw-regular);
   list-style: none;
   padding: 0.4rem;
-  border: 1px solid var(--color-light-green);
+  border: 1px solid var(--color-main-black);
   border-radius: 5px;
   font-size: clamp(0.75rem, 0.7rem + 0.251vw, 0.9rem);
   opacity: 0.7;
@@ -720,7 +720,7 @@ body {
   font-size: 0.8rem;
 }
 .live-page {
-  background-color: var(--color-light-orange);
+  background-color: var(--color-light-brown);
   width: clamp(6.5rem, 6.166666666666667rem + 1.6666666666666667vw, 7.5rem);
 }
 .source-code {
@@ -1116,7 +1116,10 @@ textarea {
     background-color: var(--color-dark-background);
   }
   .project {
-    background-color: var(--color-dark-gray);
+    background-color: var(--color-main-black);
+  }
+  .project-text {
+    color: hsla(0, 0%, 100%, 0.8);
   }
   .project-img-container.light-orange {
     background-color: var(--color-dark-red);
@@ -1128,7 +1131,10 @@ textarea {
     background-color: var(--color-dark-brown);
   }
   .live-page {
-    background-color: var(--color-dark-red);
+    background-color: var(--color-dark-gray);
+  }
+  .project-tool-list > li {
+    border: 1px solid var(--color-main-white);
   }
   .project-img {
     filter: saturate(80%);
