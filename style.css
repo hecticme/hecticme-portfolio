@@ -665,11 +665,8 @@ body {
   align-items: center;
   width: 50%;
   height: 100%;
-  transition: width 500ms var(--ani-timing-bezier);
 }
-.project-img-container:hover {
-  width: 80%;
-}
+
 .project-img-container.bright-orange {
   background-color: var(--color-bright-orange);
 }
