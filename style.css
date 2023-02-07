@@ -665,7 +665,7 @@ body {
   align-items: center;
   width: 50%;
   height: 100%;
-  transition: width 250ms var(--ani-timing-bezier);
+  transition: width 500ms var(--ani-timing-bezier);
 }
 .project-img-container:hover {
   width: 80%;
