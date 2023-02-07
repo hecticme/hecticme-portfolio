@@ -6,22 +6,15 @@
   --fw-regular: 400;
   --fw-light: 300;
 
+  /* Colors for light mode have preposition*/
   --color-main-black: hsl(0, 0%, 15%);
   --color-main-white: hsl(0, 0%, 100%);
   --color-light-brown: hsl(34, 61%, 83%);
-  --color-background: hsl(30, 36%, 95%);
+  --color-light-background: hsl(30, 36%, 95%);
   --color-light-pink: hsl(23, 75%, 78%);
-  --color-dark-green: hsl(163, 70%, 15%);
-  --color-bright-orange: hsl(14, 84%, 55%);
-  --color-dark-yellow: hsl(36, 77%, 53%);
-
-  /* Color for Dark mode */
-
-  --color-lighter-green: hsl(163, 68%, 18%);
-  --color-darker-brown: hsl(34, 73%, 70%);
-  --color-darker-pink: hsl(23, 58%, 60%);
-  --color-darker-orange: hsl(14, 78%, 48%);
-  --color-dark-background: hsl(0, 9%, 20%);
+  --color-light-green: hsl(163, 70%, 15%);
+  --color-light-orange: hsl(14, 84%, 55%);
+  --color-light-yellow: hsl(36, 77%, 53%);
 
   --ani-timing-bezier: cubic-bezier(0.18, 0.68, 0.63, 0.94);
 }
@@ -64,7 +57,7 @@ body {
 .btn::after {
   content: "";
   width: 30%;
-  border-bottom: 3px solid var(--color-bright-orange);
+  border-bottom: 3px solid var(--color-light-orange);
   position: absolute;
   left: 50%;
   bottom: 0;
@@ -232,7 +225,7 @@ body {
   height: 3.75rem;
   width: 6.25rem;
   font-size: 1.125rem;
-  background-color: var(--color-dark-green);
+  background-color: var(--color-light-green);
   color: var(--color-main-white);
 }
 /* Navigation Cards */
@@ -260,7 +253,7 @@ body {
 }
 .left-nav > a:hover {
   text-decoration: underline;
-  color: var(--color-bright-orange);
+  color: var(--color-light-orange);
 }
 
 .nav-card-container {
@@ -341,17 +334,17 @@ body {
 }
 
 .works-card > .shape:nth-child(1) {
-  background-color: var(--color-bright-orange);
+  background-color: var(--color-light-orange);
   z-index: 0;
   transform: translate(-5%, 0) rotate(-10deg);
 }
 .works-card > .shape:nth-child(2) {
-  background-color: var(--color-dark-green);
+  background-color: var(--color-light-green);
   z-index: 1;
   transform: translate(4%, 0) rotate(10deg);
 }
 .works-card > .shape:nth-child(3) {
-  background-color: var(--color-dark-yellow);
+  background-color: var(--color-light-yellow);
   z-index: 2;
   transform: translate(26%, 0) rotate(20deg);
 }
@@ -383,7 +376,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%) rotate(45deg);
   border-radius: 100% 0;
-  border: 2px solid var(--color-dark-green);
+  border: 2px solid var(--color-light-green);
   background-color: var(--color-light-brown);
   overflow: hidden;
   transition: box-shadow 1000ms ease-in-out;
@@ -405,7 +398,7 @@ body {
   animation-play-state: paused;
 }
 .skills-card > .eye > .eye-lid {
-  background-color: var(--color-dark-green);
+  background-color: var(--color-light-green);
   position: absolute;
   width: 150%;
   height: 150%;
@@ -424,7 +417,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 10% 90%;
-  background-color: var(--color-dark-green);
+  background-color: var(--color-light-green);
 }
 @keyframes eye-ball-moving {
   10% {
@@ -471,7 +464,7 @@ body {
 /* End of Hide eye-lid when can not hover */
 /* End of Eye style */
 .skills-card > .particle-shape > .shape {
-  background-color: var(--color-dark-green);
+  background-color: var(--color-light-green);
   border-radius: 50%;
 }
 .skills-card:hover > .particle-shape .shape:nth-child(-n + 7) {
@@ -538,7 +531,7 @@ body {
 
 /* About Me Card Shapes */
 .about-me-card {
-  background-color: var(--color-bright-orange);
+  background-color: var(--color-light-orange);
 }
 .about-me-card > .shape:nth-child(-n + 6) {
   transition-property: top, left, height, transform;
@@ -547,7 +540,7 @@ body {
   color: var(--color-main-black);
 }
 .about-me-card > .shape:nth-child(1) {
-  background-color: var(--color-dark-green);
+  background-color: var(--color-light-green);
   border-radius: 5px;
   width: 62%;
   height: 50%;
@@ -579,7 +572,7 @@ body {
 }
 
 .about-me-card > .shape:nth-child(3) {
-  background-color: var(--color-dark-yellow);
+  background-color: var(--color-light-yellow);
   top: 52.3%;
   left: 35.5%;
 }
@@ -598,7 +591,7 @@ body {
   left: 50%;
 }
 .about-me-card > .shape:nth-child(5) {
-  background-color: var(--color-bright-orange);
+  background-color: var(--color-light-orange);
   top: 63.3%;
   left: 56.5%;
 }
@@ -622,7 +615,7 @@ body {
 
 /* Works Section */
 #works {
-  background-color: var(--color-background);
+  background-color: var(--color-light-background);
   padding-block: 6.25rem;
 }
 
@@ -641,7 +634,7 @@ body {
   width: clamp(16.25rem, 1rem + 76.25vw, 62rem);
   border-radius: 10px;
   overflow: hidden;
-  background-color: var(--color-darker-brown);
+  background-color: var(--color-light-brown);
   color: var(--color-main-black);
   display: flex;
   justify-content: center;
@@ -667,14 +660,14 @@ body {
   height: 100%;
 }
 
-.project-img-container.bright-orange {
-  background-color: var(--color-bright-orange);
+.project-img-container.light-orange {
+  background-color: var(--color-light-orange);
 }
-.project-img-container.dark-green {
-  background-color: var(--color-dark-green);
+.project-img-container.light-green {
+  background-color: var(--color-light-green);
 }
-.project-img-container.dark-yellow {
-  background-color: var(--color-dark-yellow);
+.project-img-container.light-yellow {
+  background-color: var(--color-light-yellow);
 }
 .project-img {
   width: 90%;
@@ -707,9 +700,10 @@ body {
   font-weight: var(--fw-regular);
   list-style: none;
   padding: 0.4rem;
-  border: 1px solid var(--color-dark-green);
+  border: 1px solid var(--color-light-green);
   border-radius: 5px;
   font-size: 0.9rem;
+  /* opacity: 0.7; */
 }
 .project-btn-container {
   display: flex;
@@ -726,11 +720,11 @@ body {
   font-size: 0.8rem;
 }
 .live-page {
-  background-color: var(--color-bright-orange);
+  background-color: var(--color-light-orange);
   width: clamp(6.5rem, 6.166666666666667rem + 1.6666666666666667vw, 7.5rem);
 }
 .source-code {
-  background: var(--color-dark-green);
+  background: var(--color-light-green);
   color: var(--color-main-white);
   width: clamp(7.5rem, 7rem + 2.5vw, 9rem);
 }
@@ -840,7 +834,7 @@ body {
 
 /* About Me Section */
 #about-me {
-  background-color: var(--color-background);
+  background-color: var(--color-light-background);
   padding-block: 6.25rem;
 }
 .about-me-layout {
@@ -856,7 +850,7 @@ body {
   aspect-ratio: 430 / 482;
 }
 .about-me-img > svg #m-rect {
-  fill: var(--color-bright-orange);
+  fill: var(--color-light-orange);
 }
 .about-me-img > svg #n-rect {
   fill: var(--color-light-pink);
@@ -865,16 +859,16 @@ body {
   fill: var(--color-light-brown);
 }
 .about-me-img > svg #h-rect {
-  fill: var(--color-dark-yellow);
+  fill: var(--color-light-yellow);
 }
 .about-me-img > svg #dot-ellipse {
-  fill: var(--color-dark-green);
+  fill: var(--color-light-green);
 }
 .about-me-img > svg #eye {
-  fill: var(--color-dark-green);
+  fill: var(--color-light-green);
 }
 .about-me-img > svg #eye-ball {
-  fill: var(--color-bright-orange);
+  fill: var(--color-light-orange);
 }
 .about-me-img {
   opacity: 0;
@@ -920,6 +914,7 @@ body {
 }
 .about-me-text h3 {
   font-family: var(--font-header);
+  font-weight: var(--fw-semibold);
   font-size: clamp(1.25rem, 1.042rem + 1.042vw, 1.875rem);
   margin-block-end: 0.625rem;
   line-height: 1.5;
@@ -929,13 +924,13 @@ body {
   line-height: 1.5;
 }
 .about-me-text span[data-modal-target] {
-  color: var(--color-bright-orange);
+  color: var(--color-light-orange);
   font-weight: var(--fw-semibold);
   cursor: pointer;
 }
 .about-me-text span[data-modal-target]:hover {
   text-decoration: underline;
-  color: var(--color-dark-green);
+  color: var(--color-light-green);
 }
 /* End of About me section */
 
@@ -983,14 +978,14 @@ body {
   font-size: 1rem;
   right: 0.4rem;
   top: 0.4rem;
-  background-color: var(--color-dark-green);
+  background-color: var(--color-light-green);
   color: var(--color-main-white);
   width: 2rem;
   aspect-ratio: 1 / 1;
   border-radius: 50%;
 }
 .close-btn:hover {
-  background-color: var(--color-bright-orange);
+  background-color: var(--color-light-orange);
 }
 .contact-form-inputs {
   display: flex;
@@ -1018,14 +1013,14 @@ body {
 }
 .contact-form-inputs > input:focus,
 .contact-form-inputs > textarea:focus {
-  outline: 2px solid var(--color-dark-green);
+  outline: 2px solid var(--color-light-green);
 }
 textarea {
   resize: none;
   line-height: 1.5;
 }
 .send-request-btn {
-  background: var(--color-dark-green);
+  background: var(--color-light-green);
   text-align: center;
   color: var(--color-main-white);
   padding: 1rem;
@@ -1035,6 +1030,16 @@ textarea {
 
 /* Dark scheme */
 @media (prefers-color-scheme: dark) {
+  :root {
+    /* Colors for dark mode have dark preposition */
+    --color-dark-background: hsl(40, 3%, 18%);
+    --color-dark-red: hsl(357, 47%, 49%);
+    --color-dark-yellow: hsl(33, 74%, 65%);
+    --color-dark-gray: hsl(27, 28%, 69%);
+    --color-dark-brown: hsl(19, 31%, 47%);
+    --color-dark-wine: hsl(0, 41%, 13%);
+  }
+
   body {
     background-color: var(--color-main-black);
     color: var(--color-main-white);
@@ -1044,37 +1049,91 @@ textarea {
     color: var(--color--main-white);
   }
 
+  .btn::after {
+    border-bottom: 3px solid var(--color-dark-red);
+  }
+
+  .greeting-text > p {
+    color: hsla(0, 0%, 100%, 0.8);
+  }
+
   .title-line {
     border-bottom: 2px solid var(--color-main-white);
   }
-  .resume-btn:hover,
+  .contact-me-btn {
+    background-color: var(--color-dark-gray);
+  }
   .contact-me-btn:hover {
-    box-shadow: hsla(164, 19%, 85%, 0.25) 0px 20px 100px 0px;
+    box-shadow: hsla(27, 28%, 69%, 0.25) 0px 20px 100px 0px;
   }
   .resume-btn {
-    background-color: var(--color-lighter-green);
+    background-color: var(--color-dark-brown);
   }
+  .resume-btn:hover {
+    box-shadow: hsla(19, 31%, 47%, 0.25) 0px 20px 100px 0px;
+  }
+
   .works-card {
-    background-color: var(--color-darker-brown);
+    background-color: var(--color-dark-gray);
   }
+  .works-card > .shape:nth-child(1) {
+    background-color: var(--color-dark-red);
+  }
+  .works-card > .shape:nth-child(3) {
+    background-color: var(--color-dark-brown);
+  }
+
   .skills-card {
-    background-color: var(--color-darker-pink);
+    background-color: var(--color-dark-yellow);
   }
+  .skills-card > .eye {
+    background-color: var(--color-dark-gray);
+  }
+
   .about-me-card {
-    background-color: var(--color-darker-orange);
+    background-color: var(--color-dark-red);
   }
+  .about-me-card > .shape:nth-child(1) {
+    background-color: var(--color-dark-wine);
+  }
+  .about-me-card > .shape:nth-child(2) {
+    background-color: var(--color-dark-brown);
+  }
+  .about-me-card > .shape:nth-child(3) {
+    background-color: var(--color-dark-yellow);
+  }
+  .about-me-card > .shape:nth-child(4) {
+    background-color: var(--color-dark-gray);
+  }
+  .about-me-card > .shape:nth-child(5) {
+    background-color: var(--color-dark-red);
+  }
+  .about-me-card > .shape:nth-child(6) {
+    background-color: var(--color-dark-yellow);
+  }
+
   #works {
     background-color: var(--color-dark-background);
   }
-  .project-img-container.bright-orange {
-    background-color: var(--color-darker-orange);
+  .project {
+    background-color: var(--color-dark-gray);
   }
-  .project-img-container.dark-green {
-    background-color: var(--color-lighter-green);
+  .project-img-container.light-orange {
+    background-color: var(--color-dark-red);
   }
-  .project-img-container.dark-yellow {
-    background-color: var(--color-dark-yellow);
+  .project-img-container.light-green {
+    background-color: var(--color-light-green);
   }
+  .project-img-container.light-yellow {
+    background-color: var(--color-dark-brown);
+  }
+  .live-page {
+    background-color: var(--color-dark-red);
+  }
+  .project-img {
+    filter: saturate(80%);
+  }
+
   #skills:hover .logo {
     box-shadow: hsla(0, 0%, 100%, 0.2) 0px 48px 100px 0px;
   }
@@ -1089,33 +1148,44 @@ textarea {
   }
 
   .about-me-img > svg #m-rect {
-    fill: var(--color-darker-orange);
+    fill: var(--color-dark-red);
   }
   .about-me-img > svg #n-rect {
-    fill: var(--color-darker-pink);
+    fill: var(--color-dark-gray);
   }
   .about-me-img > svg #i-rect {
-    fill: var(--color-darker-brown);
+    fill: var(--color-dark-brown);
   }
   .about-me-img > svg #h-rect {
     fill: var(--color-dark-yellow);
   }
   .about-me-img > svg #dot-ellipse {
-    fill: var(--color-lighter-green);
+    fill: var(--color-dark-yellow);
   }
   .about-me-img > svg #eye {
-    fill: var(--color-dark-green);
+    fill: var(--color-light-green);
   }
   .about-me-img > svg #eye-ball {
-    fill: var(--color-bright-orange);
+    fill: var(--color-dark-red);
   }
 
   #contact-form {
-    background-color: var(--color-darker-brown);
+    background-color: var(--color-dark-gray);
   }
 
   .close-btn:hover {
-    background-color: var(--color-darker-orange);
+    background-color: var(--color-dark-red);
+  }
+
+  .about-me-text > p {
+    color: hsla(0, 0%, 100%, 0.8);
+  }
+
+  .about-me-text span[data-modal-target] {
+    color: var(--color-dark-red);
+  }
+  .about-me-text span[data-modal-target]:hover {
+    color: var(--color-dark-brown);
   }
 
   .contact-form-inputs > input,
