@@ -277,61 +277,6 @@ overlay.addEventListener("click", () => {
 });
 // End of Open and close contact me form
 
-// About me section eye-ball
-const aboutMeSection = document.querySelector("#about-me");
-const aboutMeEye = document.querySelector(".about-me-img #eye");
-const aboutMeEyeBall = document.querySelector(".about-me-img #eye-ball");
-
-const aboutMeNav = document.querySelector('[href="#about-me"]');
-const skillsNav = document.querySelector('[href="#skills"]');
-const worksNav = document.querySelector('[href="#works"]');
-const homeNav = document.querySelector('[href="#"]');
-const aboutMeContact = document.querySelector(
-  'span[data-modal-target="#contact-form"]'
-);
-const mRect = document.querySelector(".about-me-img #m-rect");
-const nRect = document.querySelector(".about-me-img #n-rect");
-const hRect = document.querySelector(".about-me-img #h-rect");
-const expandArr = [
-  aboutMeNav,
-  skillsNav,
-  worksNav,
-  homeNav,
-  aboutMeContact,
-  mRect,
-  nRect,
-  hRect,
-];
-
-// Iris expands on hover
-expandArr.forEach((element) => {
-  element.onmouseover = () => {
-    aboutMeEyeBall.classList.add("expands");
-  };
-  element.onmouseout = () => {
-    aboutMeEyeBall.classList.remove("expands");
-  };
-});
-
-// Eye-ball follows cursor
-aboutMeSection.onmousemove = (e) => {
-  const [moveX, moveY] = getMousePosition(e, aboutMeEye);
-  const panX = 0.02 * moveX;
-  const panY = 0.02 * moveY;
-
-  aboutMeEyeBall.animate(
-    {
-      transform: `translate(${panX}px, ${panY}px)`,
-    },
-    {
-      duration: 10,
-      easing: "ease-in-out",
-      fill: "forwards",
-    }
-  );
-};
-// End of About me section eye-ball logic
-
 // Observe fly-in animation
 const flyInObserver = new IntersectionObserver(
   (entries) => {

@@ -383,27 +383,7 @@
                 rx="5"
               />
               <ellipse id="eye" cx="329.5" cy="66.5" rx="41.5" ry="25.5" />
-              <mask
-                id="mask0_190_15"
-                style="mask-type: alpha"
-                maskUnits="userSpaceOnUse"
-                x="288"
-                y="41"
-                width="83"
-                height="51"
-              >
-                <ellipse
-                  id="eye-mask"
-                  cx="329.5"
-                  cy="66.5"
-                  rx="41.5"
-                  ry="25.5"
-                  fill="#0B3F30"
-                />
-              </mask>
-              <g mask="url(#mask0_190_15)">
-                <circle id="eye-ball" cx="329.5" cy="66.5" r="11.5" />
-              </g>
+              <circle id="eye-ball" cx="329.5" cy="66.5" r="11.5" />
             </g>
           </svg>
         </div>
@@ -418,12 +398,12 @@
         <label for="name">Name:</label>
         <input type="text" name="name" id="name" />
         <label for="email">Email:</label>
-        <input type="email" name="email" id="email" />
+        <input type="email" name="email" id="email" required />
         <label for="subject">Subject:</label>
         <input type="text" name="subject" id="subject" />
         <label for="message">Message:</label>
         <textarea name="message" id="message" rows="6"></textarea>
-        <button class="btn send-request-btn">Send Request</button>
+        <button type="submit" class="btn send-request-btn">Send Request</button>
       </form>
     </div>
 
