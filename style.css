@@ -763,7 +763,7 @@ body {
 .project-btn-container {
   display: flex;
   gap: 0.625rem;
-  padding-block-start: 1.25rem;
+  padding-block-start: clamp(0rem, -0.416rem + 2.083vw, 1.25rem);
 }
 .live-page,
 .source-code {
