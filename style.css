@@ -277,9 +277,9 @@ body {
 
 .resume-btn {
   height: 3.75rem;
-  width: 6.25rem;
+  width: 6.5rem;
   font-size: 1.125rem;
-  margin-inline-end: 1rem;
+  margin-inline-end: 0.6rem;
   background-color: var(--color-light-green);
   color: var(--color-main-white);
 }
