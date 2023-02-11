@@ -251,32 +251,6 @@ logos.forEach((logo) => {
 });
 // -- End of Skills layout show name on hover
 
-// Open and close contact me form
-const openContactBtn = document.querySelectorAll(
-  '[data-modal-target="#contact-form"]'
-);
-const closeContactBtn = document.querySelectorAll("[data-close-btn]");
-const overlay = document.querySelector(".overlay");
-const contactForm = document.querySelector("#contact-form");
-
-openContactBtn.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    contactForm.classList.add("show");
-    overlay.classList.add("show");
-  });
-});
-closeContactBtn.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    contactForm.classList.remove("show");
-    overlay.classList.remove("show");
-  });
-});
-overlay.addEventListener("click", () => {
-  contactForm.classList.remove("show");
-  overlay.classList.remove("show");
-});
-// End of Open and close contact me form
-
 // Observe fly-in animation
 const flyInObserver = new IntersectionObserver(
   (entries) => {
@@ -307,3 +281,19 @@ projectImgs.forEach((img) => {
   flyInObserver.observe(img);
 });
 // End of Observe fly-in animation
+
+// Copy email function
+const contactMeBtn = document.querySelector(".contact-me-btn");
+const contactMeBtnText = document.querySelector(".contact-me-btn input").value;
+
+contactMeBtn.addEventListener("click", () => {
+  navigator.clipboard.writeText(contactMeBtnText);
+
+  contactMeBtn.classList.add("show");
+
+  setTimeout(() => {
+    contactMeBtn.classList.remove("show");
+  }, 2000);
+});
+
+// End of Copy email function
