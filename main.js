@@ -284,15 +284,25 @@ projectImgs.forEach((img) => {
 
 // Copy email function
 const contactMeBtn = document.querySelector(".contact-me-btn");
-const contactMeBtnText = document.querySelector(".contact-me-btn input").value;
+const contactMeAlt = document.querySelector(".contact-me-alt");
 
 contactMeBtn.addEventListener("click", () => {
-  navigator.clipboard.writeText(contactMeBtnText);
+  navigator.clipboard.writeText("hangoc.minh1306@gmail.com");
 
   contactMeBtn.classList.add("show");
 
   setTimeout(() => {
     contactMeBtn.classList.remove("show");
+  }, 2000);
+});
+
+contactMeAlt.addEventListener("click", () => {
+  navigator.clipboard.writeText("hangoc.minh1306@gmail.com");
+
+  contactMeAlt.classList.add("show");
+
+  setTimeout(() => {
+    contactMeAlt.classList.remove("show");
   }, 2000);
 });
 
