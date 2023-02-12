@@ -104,43 +104,32 @@ skillsCard.onmouseout = () => {
 // End of Skill cards logic
 
 // -- Skills layout follow cursors
-const skillsSection = document.querySelector("#skills");
-const logoLayout1 = document.querySelector("#logo-layout-1");
-const logoLayout2 = document.querySelector("#logo-layout-2");
-const logoLayout3 = document.querySelector("#logo-layout-3");
-const logoLayout4 = document.querySelector("#logo-layout-4");
-const logoLayout5 = document.querySelector("#logo-layout-5");
-const logoLayoutArr = [
-  logoLayout1,
-  logoLayout2,
-  logoLayout3,
-  logoLayout4,
-  logoLayout5,
-];
+const mediaHoverNone = window.matchMedia("(hover: none)");
+if (!mediaHoverNone.matches) {
+  const skillsSection = document.querySelector("#skills");
+  const logoLayout1 = document.querySelector("#logo-layout-1");
+  const logoLayout2 = document.querySelector("#logo-layout-2");
+  const logoLayout3 = document.querySelector("#logo-layout-3");
+  const logoLayout4 = document.querySelector("#logo-layout-4");
+  const logoLayout5 = document.querySelector("#logo-layout-5");
+  const logoLayoutArr = [
+    logoLayout1,
+    logoLayout2,
+    logoLayout3,
+    logoLayout4,
+    logoLayout5,
+  ];
 
-skillsSection.addEventListener("mousemove", (e) => {
-  const [moveX, moveY] = getMousePosition(e, skillsSection);
-  const [panX, panY] = [0.05 * moveX, 0.05 * moveY];
+  skillsSection.addEventListener("mousemove", (e) => {
+    const [moveX, moveY] = getMousePosition(e, skillsSection);
+    const [panX, panY] = [0.05 * moveX, 0.05 * moveY];
 
-  let delay1;
-  let delay2;
-  let delay3;
-  let delay4;
+    let delay1;
+    let delay2;
+    let delay3;
+    let delay4;
 
-  if (panX <= 0) {
-    delay1 = 0;
-    delay2 = 100;
-    delay3 = 300;
-    delay4 = 400;
-  } else {
-    delay1 = 400;
-    delay2 = 300;
-    delay3 = 100;
-    delay4 = 0;
-  }
-  const mediaQuery = window.matchMedia("(max-width: 800px)");
-  if (mediaQuery.matches) {
-    if (panY >= 0) {
+    if (panX <= 0) {
       delay1 = 0;
       delay2 = 100;
       delay3 = 300;
@@ -151,78 +140,92 @@ skillsSection.addEventListener("mousemove", (e) => {
       delay3 = 100;
       delay4 = 0;
     }
-  }
-  logoLayout1.animate(
-    {
-      transform: `translate(${panX}px, ${panY}px)`,
-    },
-    {
-      duration: 500,
-      fill: "forwards",
-      easing: "ease-in-out",
-      delay: delay1,
+    const mediaQuery = window.matchMedia("(max-width: 800px)");
+    if (mediaQuery.matches) {
+      if (panY >= 0) {
+        delay1 = 0;
+        delay2 = 100;
+        delay3 = 300;
+        delay4 = 400;
+      } else {
+        delay1 = 400;
+        delay2 = 300;
+        delay3 = 100;
+        delay4 = 0;
+      }
     }
-  );
-  logoLayout2.animate(
-    {
-      transform: `translate(${panX}px, ${panY}px)`,
-    },
-    {
-      duration: 500,
-      fill: "forwards",
-      easing: "ease-in-out",
-      delay: delay2,
-    }
-  );
-  logoLayout3.animate(
-    {
-      transform: `translate(${panX}px, ${panY}px)`,
-    },
-    {
-      duration: 500,
-      fill: "forwards",
-      easing: "ease-in-out",
-      delay: 200,
-    }
-  );
-  logoLayout4.animate(
-    {
-      transform: `translate(${panX}px, ${panY}px)`,
-    },
-    {
-      duration: 500,
-      fill: "forwards",
-      easing: "ease-in-out",
-      delay: delay3,
-    }
-  );
-  logoLayout5.animate(
-    {
-      transform: `translate(${panX}px, ${panY}px)`,
-    },
-    {
-      duration: 500,
-      fill: "forwards",
-      easing: "ease-in-out",
-      delay: delay4,
-    }
-  );
-});
-
-skillsSection.addEventListener("mouseout", () => {
-  logoLayoutArr.forEach((logo) => {
-    logo.animate(
+    logoLayout1.animate(
       {
-        transform: `translate(0px, 0px)`,
+        transform: `translate(${panX}px, ${panY}px)`,
       },
       {
         duration: 500,
         fill: "forwards",
         easing: "ease-in-out",
+        delay: delay1,
+      }
+    );
+    logoLayout2.animate(
+      {
+        transform: `translate(${panX}px, ${panY}px)`,
+      },
+      {
+        duration: 500,
+        fill: "forwards",
+        easing: "ease-in-out",
+        delay: delay2,
+      }
+    );
+    logoLayout3.animate(
+      {
+        transform: `translate(${panX}px, ${panY}px)`,
+      },
+      {
+        duration: 500,
+        fill: "forwards",
+        easing: "ease-in-out",
+        delay: 200,
+      }
+    );
+    logoLayout4.animate(
+      {
+        transform: `translate(${panX}px, ${panY}px)`,
+      },
+      {
+        duration: 500,
+        fill: "forwards",
+        easing: "ease-in-out",
+        delay: delay3,
+      }
+    );
+    logoLayout5.animate(
+      {
+        transform: `translate(${panX}px, ${panY}px)`,
+      },
+      {
+        duration: 500,
+        fill: "forwards",
+        easing: "ease-in-out",
+        delay: delay4,
       }
     );
   });
-});
+
+  skillsSection.addEventListener("mouseout", () => {
+    logoLayoutArr.forEach((logo) => {
+      logo.animate(
+        {
+          transform: `translate(0px, 0px)`,
+        },
+        {
+          duration: 500,
+          fill: "forwards",
+          easing: "ease-in-out",
+        }
+      );
+    });
+  });
+}
 
 // -- End of Skills layout follow cursor
 
