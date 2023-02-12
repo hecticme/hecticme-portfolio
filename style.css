@@ -853,6 +853,13 @@ body {
     box-shadow: hsl(163, 70%, 15%, 15%) 0px 48px 100px 0px;
   }
 }
+
+@media (hover: none) and (prefers-color-scheme: dark) {
+  #skills .logo {
+    box-shadow: hsla(0, 0%, 100%, 0.2) 0px 48px 100px 0px;
+  }
+}
+
 .skills-layout .logo {
   transition: box-shadow 500ms var(--ani-timing-bezier);
   background-color: var(--color-main-white);
