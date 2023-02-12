@@ -674,10 +674,6 @@ body {
   padding-block: 6.25rem;
 }
 
-.works-img {
-  margin-block-end: 2.5rem;
-}
-
 .project-container {
   display: flex;
   flex-direction: column;
@@ -852,6 +848,11 @@ body {
 #skills:hover .logo {
   box-shadow: hsl(163, 70%, 15%, 15%) 0px 48px 100px 0px;
 }
+@media (hover: none) {
+  #skills .logo {
+    box-shadow: hsl(163, 70%, 15%, 15%) 0px 48px 100px 0px;
+  }
+}
 .skills-layout .logo {
   transition: box-shadow 500ms var(--ani-timing-bezier);
   background-color: var(--color-main-white);
@@ -879,6 +880,7 @@ body {
   font-weight: var(--fw-regular);
   transform: scale(0);
   transition: transform 250ms ease-in-out;
+  pointer-events: none;
 }
 .skills-layout .logo .logo-text.show {
   transform: scale(1);
