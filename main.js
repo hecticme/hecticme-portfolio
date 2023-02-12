@@ -78,7 +78,7 @@ skillsCard.onmousemove = (e) => {
   );
 };
 // Eye goes back to  original position
-skillsCard.onmouseout = () => {
+skillsCard.onmouseleave = () => {
   eyeBall.animate(
     {
       transform: `translate(-50%, -50%)`,
@@ -211,7 +211,7 @@ if (!mediaHoverNone.matches) {
     );
   });
 
-  skillsSection.addEventListener("mouseout", () => {
+  skillsSection.addEventListener("mouseleave", () => {
     logoLayoutArr.forEach((logo) => {
       logo.animate(
         {
@@ -242,7 +242,7 @@ logos.forEach((logo) => {
   });
 });
 logos.forEach((logo) => {
-  logo.addEventListener("mouseout", () => {
+  logo.addEventListener("mouseleave", () => {
     const img = document.querySelector(`#logo-img-${logo.dataset.logoTarget}`);
     const text = document.querySelector(
       `#logo-text-${logo.dataset.logoTarget}`
