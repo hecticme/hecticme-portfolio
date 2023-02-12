@@ -1040,12 +1040,12 @@ body {
     --color-dark-gray: hsl(27, 28%, 69%);
     --color-dark-brown: hsl(19, 31%, 47%);
     --color-dark-wine: hsl(0, 41%, 13%);
-    color-scheme: dark;
   }
 
   body {
     background-color: var(--color-main-black);
     color: var(--color-main-white);
+    color-scheme: dark;
   }
 
   a {
