@@ -103,8 +103,7 @@ skillsCard.onmouseout = () => {
 };
 // End of Skill cards logic
 
-// -- Skills layout follow cursor
-const skillsLayout = document.querySelector(".skills-layout");
+// -- Skills layout follow cursors
 const skillsSection = document.querySelector("#skills");
 const logoLayout1 = document.querySelector("#logo-layout-1");
 const logoLayout2 = document.querySelector("#logo-layout-2");
