@@ -15,6 +15,7 @@
   --color-light-green: hsl(163, 70%, 15%);
   --color-light-orange: hsl(14, 84%, 55%);
   --color-light-yellow: hsl(36, 77%, 53%);
+  --color-light-blue: hsl(167, 18%, 58%);
 
   --ani-timing-bezier: cubic-bezier(0.18, 0.68, 0.63, 0.94);
 }
@@ -222,6 +223,7 @@ body {
   border: none;
   border-radius: 5px;
   background-color: var(--color-light-brown);
+  color: var(--color-main-black);
   font-size: 1.125rem;
   font-weight: var(--fw-semibold);
   transition-property: width, box-shadow, opacity;
@@ -265,6 +267,7 @@ body {
   border: none;
   font-size: 1rem;
   background-color: inherit;
+  color: var(--color-main-black);
   pointer-events: none;
   padding: 0.675rem;
   transition-property: transform;
@@ -389,19 +392,24 @@ body {
 }
 
 .works-card > .shape:nth-child(1) {
-  background-color: var(--color-light-orange);
+  background-color: var(--color-light-blue);
   z-index: 0;
-  transform: translate(-5%, 0) rotate(-10deg);
+  transform: translate(-17%, 0) rotate(-18deg);
 }
 .works-card > .shape:nth-child(2) {
-  background-color: var(--color-light-green);
-  z-index: 1;
-  transform: translate(4%, 0) rotate(10deg);
+  background-color: var(--color-light-orange);
+  z-index: 0;
+  transform: translate(-5%, -3%) rotate(-8deg);
 }
 .works-card > .shape:nth-child(3) {
+  background-color: var(--color-light-green);
+  z-index: 1;
+  transform: translate(17%, 0) rotate(10deg);
+}
+.works-card > .shape:nth-child(4) {
   background-color: var(--color-light-yellow);
   z-index: 2;
-  transform: translate(26%, 0) rotate(20deg);
+  transform: translate(32%, 4%) rotate(22deg);
 }
 
 /* Works Cards Animation */
@@ -410,12 +418,15 @@ body {
   box-shadow: hsla(163, 70%, 15%, 0.1) 0px 48px 100px 0px;
 }
 .works-card:hover > .shape:nth-child(1) {
-  transform: translate(0, -40%);
+  transform: translate(0, -70%);
 }
 .works-card:hover > .shape:nth-child(2) {
-  transform: translate(0, -10%);
+  transform: translate(0, -40%);
 }
 .works-card:hover > .shape:nth-child(3) {
+  transform: translate(0, -10%);
+}
+.works-card:hover > .shape:nth-child(4) {
   transform: translate(0, 20%);
 }
 
@@ -711,6 +722,9 @@ body {
   height: 100%;
 }
 
+.project-img-container.light-blue {
+  background-color: var(--color-light-blue);
+}
 .project-img-container.light-orange {
   background-color: var(--color-light-orange);
 }
@@ -772,6 +786,7 @@ body {
 }
 .live-page {
   background-color: var(--color-light-brown);
+  color: var(--color-main-black);
   width: clamp(6.5rem, 6.166666666666667rem + 1.6666666666666667vw, 7.5rem);
 }
 .source-code {
@@ -1042,88 +1057,33 @@ body {
   :root {
     /* Colors for dark mode have dark preposition */
     --color-dark-background: hsl(40, 3%, 18%);
-    --color-dark-red: hsl(357, 47%, 49%);
-    --color-dark-yellow: hsl(33, 74%, 65%);
-    --color-dark-gray: hsl(27, 28%, 69%);
-    --color-dark-brown: hsl(19, 31%, 47%);
-    --color-dark-wine: hsl(0, 41%, 13%);
+    --color-dark-white: hsl(210, 40%, 96%);
   }
 
   body {
     background-color: var(--color-main-black);
-    color: var(--color-main-white);
+    color: var(--color-dark-white);
     color-scheme: dark;
   }
 
   a {
-    color: var(--color--main-white);
-  }
-
-  .btn::after {
-    border-bottom: 3px solid var(--color-dark-red);
+    color: var(--color-dark-white);
   }
 
   .greeting-text > p {
-    color: hsla(0, 0%, 100%, 0.8);
-  }
-
-  .contact-me-btn::after {
-    background-color: var(--color-dark-red);
+    color: hsla(210, 40%, 96%, 0.8);
   }
 
   .title-line {
-    border-bottom: 2px solid var(--color-main-white);
+    border-bottom: 2px solid var(--color-dark-white);
   }
-  .contact-me-btn {
-    background-color: var(--color-dark-gray);
-  }
+
   .contact-me-btn:hover {
     box-shadow: hsla(27, 28%, 69%, 0.25) 0px 20px 100px 0px;
   }
-  .resume-btn {
-    background-color: var(--color-dark-brown);
-  }
+
   .resume-btn:hover {
     box-shadow: hsla(19, 31%, 47%, 0.25) 0px 20px 100px 0px;
-  }
-
-  .works-card {
-    background-color: var(--color-dark-gray);
-  }
-  .works-card > .shape:nth-child(1) {
-    background-color: var(--color-dark-red);
-  }
-  .works-card > .shape:nth-child(3) {
-    background-color: var(--color-dark-brown);
-  }
-
-  .skills-card {
-    background-color: var(--color-dark-yellow);
-  }
-  .skills-card > .eye {
-    background-color: var(--color-dark-gray);
-  }
-
-  .about-me-card {
-    background-color: var(--color-dark-red);
-  }
-  .about-me-card > .shape:nth-child(1) {
-    background-color: var(--color-dark-wine);
-  }
-  .about-me-card > .shape:nth-child(2) {
-    background-color: var(--color-dark-brown);
-  }
-  .about-me-card > .shape:nth-child(3) {
-    background-color: var(--color-dark-yellow);
-  }
-  .about-me-card > .shape:nth-child(4) {
-    background-color: var(--color-dark-gray);
-  }
-  .about-me-card > .shape:nth-child(5) {
-    background-color: var(--color-dark-red);
-  }
-  .about-me-card > .shape:nth-child(6) {
-    background-color: var(--color-dark-yellow);
   }
 
   #works {
@@ -1133,25 +1093,11 @@ body {
     background-color: var(--color-main-black);
   }
   .project-text {
-    color: hsla(0, 0%, 100%, 0.8);
+    color: hsla(210, 40%, 96%, 0.8);
   }
-  .project-img-container.light-orange {
-    background-color: var(--color-dark-red);
-  }
-  .project-img-container.light-green {
-    background-color: var(--color-light-green);
-  }
-  .project-img-container.light-yellow {
-    background-color: var(--color-dark-brown);
-  }
-  .live-page {
-    background-color: var(--color-dark-gray);
-  }
+
   .project-tool-list > li {
-    border: 1px solid var(--color-main-white);
-  }
-  .project-img {
-    filter: saturate(80%);
+    border: 1px solid var(--color-dark-white);
   }
 
   #skills:hover .logo {
@@ -1169,36 +1115,7 @@ body {
     background-color: var(--color-dark-background);
   }
 
-  .contact-me-alt::before {
-    background-color: var(--color-dark-red);
-  }
-  .contact-me-alt::after {
-    background-color: var(--color-dark-red);
-  }
-
-  .about-me-img > svg #m-rect {
-    fill: var(--color-dark-red);
-  }
-  .about-me-img > svg #n-rect {
-    fill: var(--color-dark-gray);
-  }
-  .about-me-img > svg #i-rect {
-    fill: var(--color-dark-brown);
-  }
-  .about-me-img > svg #h-rect {
-    fill: var(--color-dark-yellow);
-  }
-  .about-me-img > svg #dot-ellipse {
-    fill: var(--color-dark-yellow);
-  }
-  .about-me-img > svg #eye {
-    fill: var(--color-light-green);
-  }
-  .about-me-img > svg #eye-ball {
-    fill: var(--color-dark-red);
-  }
-
   .about-me-text > p {
-    color: hsla(0, 0%, 100%, 0.8);
+    color: hsla(210, 40%, 96%, 0.8);
   }
 }
