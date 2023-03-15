@@ -258,7 +258,7 @@ body {
   transform: translate(-50%, -50%);
 }
 
-.contact-me-btn input {
+.contact-me-btn #email {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -274,7 +274,7 @@ body {
   transition-duration: 250ms;
   transition-timing-function: var(--ani-timing-bezier);
 }
-.contact-me-btn:hover input {
+.contact-me-btn:hover #email {
   transform: translate(-50%, -50%);
 }
 
