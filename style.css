@@ -172,24 +172,6 @@ body {
   align-items: flex-end;
 }
 
-@media (max-width: 65.3125em) {
-  .intro {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .nav-card-container {
-    margin-block-start: 2.5rem;
-  }
-  .greeting-text > h1,
-  .greeting-text > p {
-    text-align: center;
-  }
-  .greeting-btns {
-    display: flex;
-    justify-content: center;
-  }
-}
-
 /* Greeting */
 .greeting {
   opacity: 0;
@@ -215,6 +197,12 @@ body {
   font-size: clamp(1rem, 0.92rem + 0.42vw, 1.25rem);
   margin-block-end: 2.5rem;
   line-height: 1.5;
+}
+
+.greeting-btns {
+  display: flex;
+  gap: 0.6rem;
+  justify-content: start;
 }
 
 .contact-me-btn {
@@ -280,11 +268,27 @@ body {
 
 .resume-btn {
   height: 3.75rem;
-  width: 6.5rem;
+  padding-inline: 1rem;
   font-size: 1.125rem;
-  margin-inline-end: 0.6rem;
   background-color: var(--color-light-green);
   color: var(--color-main-white);
+}
+
+@media (max-width: 65.3125em) {
+  .intro {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .nav-card-container {
+    margin-block-start: 2.5rem;
+  }
+  .greeting-text > h1,
+  .greeting-text > p {
+    text-align: center;
+  }
+  .greeting-btns {
+    justify-content: center;
+  }
 }
 /* Navigation Cards */
 .left-nav {
