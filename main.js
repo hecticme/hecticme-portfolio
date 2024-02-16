@@ -23,6 +23,7 @@ const observeOptions = {
 }
 const leftNav = document.querySelector(".left-nav")
 const intro = document.querySelector(".intro")
+
 const leftNavObserver = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (!entry.isIntersecting) {
@@ -55,6 +56,7 @@ const getMousePosition = (event, target) => {
 skillsCard.onmousemove = (e) => {
   const [moveX, moveY] = getMousePosition(e, skillsCard)
   const [panX, panY] = [0.1 * moveX, 0.1 * moveY]
+
   eyeBall.animate(
     {
       transform: `translate(${-50 + panX}%, ${-50 + panY}%)`,
@@ -65,6 +67,7 @@ skillsCard.onmousemove = (e) => {
       easing: "ease-in-out",
     }
   )
+
   eye.animate(
     {
       transform: `translate(${-50 + panX}%, ${-50 + panY}%) rotate(45deg)`,
@@ -77,7 +80,8 @@ skillsCard.onmousemove = (e) => {
     }
   )
 }
-// Eye goes back to  original position
+
+// Eye goes back to original position
 skillsCard.onmouseleave = () => {
   eyeBall.animate(
     {
@@ -89,6 +93,7 @@ skillsCard.onmouseleave = () => {
       easing: "ease",
     }
   )
+
   eye.animate(
     {
       transform: `translate(-50%, -50%) rotate(45deg)`,
@@ -140,6 +145,7 @@ if (!mediaHoverNone.matches) {
       delay3 = 100
       delay4 = 0
     }
+
     const mediaQuery = window.matchMedia("(max-width: 800px)")
     if (mediaQuery.matches) {
       if (panY >= 0) {
@@ -154,6 +160,7 @@ if (!mediaHoverNone.matches) {
         delay4 = 0
       }
     }
+
     logoLayout1.animate(
       {
         transform: `translate(${panX}px, ${panY}px)`,
@@ -165,6 +172,7 @@ if (!mediaHoverNone.matches) {
         delay: delay1,
       }
     )
+
     logoLayout2.animate(
       {
         transform: `translate(${panX}px, ${panY}px)`,
@@ -176,6 +184,7 @@ if (!mediaHoverNone.matches) {
         delay: delay2,
       }
     )
+
     logoLayout3.animate(
       {
         transform: `translate(${panX}px, ${panY}px)`,
@@ -187,6 +196,7 @@ if (!mediaHoverNone.matches) {
         delay: 200,
       }
     )
+
     logoLayout4.animate(
       {
         transform: `translate(${panX}px, ${panY}px)`,
@@ -198,6 +208,7 @@ if (!mediaHoverNone.matches) {
         delay: delay3,
       }
     )
+
     logoLayout5.animate(
       {
         transform: `translate(${panX}px, ${panY}px)`,
@@ -231,22 +242,22 @@ if (!mediaHoverNone.matches) {
 
 // -- Skills layout show name on hover
 const logos = document.querySelectorAll(".logo")
+
 logos.forEach((logo) => {
   logo.addEventListener("mouseover", () => {
     const img = document.querySelector(`#logo-img-${logo.dataset.logoTarget}`)
-    const text = document.querySelector(
-      `#logo-text-${logo.dataset.logoTarget}`
-    )
+    const text = document.querySelector(`#logo-text-${logo.dataset.logoTarget}`)
+
     img.classList.add("show")
     text.classList.add("show")
   })
 })
+
 logos.forEach((logo) => {
   logo.addEventListener("mouseleave", () => {
     const img = document.querySelector(`#logo-img-${logo.dataset.logoTarget}`)
-    const text = document.querySelector(
-      `#logo-text-${logo.dataset.logoTarget}`
-    )
+    const text = document.querySelector(`#logo-text-${logo.dataset.logoTarget}`)
+
     img.classList.remove("show")
     text.classList.remove("show")
   })
