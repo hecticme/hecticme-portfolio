@@ -24,8 +24,8 @@ const observeOptions = {
 const leftNav = document.querySelector(".left-nav")
 const intro = document.querySelector(".intro")
 
-const leftNavObserver = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
+const leftNavObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
     if (!entry.isIntersecting) {
       leftNav.classList.add("show")
     } else {
@@ -53,7 +53,7 @@ const getMousePosition = (event, target) => {
   return result
 }
 
-skillsCard.onmousemove = (e) => {
+skillsCard.onmousemove = e => {
   const [moveX, moveY] = getMousePosition(e, skillsCard)
   const [panX, panY] = [0.1 * moveX, 0.1 * moveY]
 
@@ -125,7 +125,7 @@ if (!mediaHoverNone.matches) {
     logoLayout5,
   ]
 
-  skillsSection.addEventListener("mousemove", (e) => {
+  skillsSection.addEventListener("mousemove", e => {
     const [moveX, moveY] = getMousePosition(e, skillsSection)
     const [panX, panY] = [0.05 * moveX, 0.05 * moveY]
 
@@ -223,7 +223,7 @@ if (!mediaHoverNone.matches) {
   })
 
   skillsSection.addEventListener("mouseleave", () => {
-    logoLayoutArr.forEach((logo) => {
+    logoLayoutArr.forEach(logo => {
       logo.animate(
         {
           transform: `translate(0px, 0px)`,
@@ -243,7 +243,7 @@ if (!mediaHoverNone.matches) {
 // -- Skills layout show name on hover
 const logos = document.querySelectorAll(".logo")
 
-logos.forEach((logo) => {
+logos.forEach(logo => {
   logo.addEventListener("mouseover", () => {
     const img = document.querySelector(`#logo-img-${logo.dataset.logoTarget}`)
     const text = document.querySelector(`#logo-text-${logo.dataset.logoTarget}`)
@@ -253,7 +253,7 @@ logos.forEach((logo) => {
   })
 })
 
-logos.forEach((logo) => {
+logos.forEach(logo => {
   logo.addEventListener("mouseleave", () => {
     const img = document.querySelector(`#logo-img-${logo.dataset.logoTarget}`)
     const text = document.querySelector(`#logo-text-${logo.dataset.logoTarget}`)
@@ -266,8 +266,8 @@ logos.forEach((logo) => {
 
 // Observe fly-in animation
 const flyInObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
+  entries => {
+    entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add("show")
         flyInObserver.unobserve(entry.target)
@@ -290,7 +290,7 @@ flyInObserver.observe(aboutMeCard)
 flyInObserver.observe(greeting)
 flyInObserver.observe(aboutMeText)
 flyInObserver.observe(aboutMeImg)
-projectImgs.forEach((img) => {
+projectImgs.forEach(img => {
   flyInObserver.observe(img)
 })
 // End of Observe fly-in animation
